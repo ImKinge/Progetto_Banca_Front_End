@@ -1,61 +1,24 @@
-<header class="px-3 py-2 text-secondary">
-  <h2>Sova's Bank</h2>
-</header>
-
-<body>
-  <div class="px-3 py-2 text-bg-dark">
-    <h5>Home</h5>
+<html>
+  <head>
+    <link rel="stylesheet" href="home.component.css">
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">YourBank</h2>
+      <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
+        <button class="btnLogin">Login</button>
+      </nav>
+    </header>
     <div class="container">
-      
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-        </a>
-
-        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-
-          <li>
-            <a class="nav-link text-white">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                <use xlink:href="#speedometer2"></use>
-              </svg>
-                Conto Corrente
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                <use xlink:href="#table"></use>
-              </svg>
-              Carte di Credito
-            </a>
-          </li>
-        
-          <li>
-            <a href="#" class="nav-link text-secondary">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                <use xlink:href="#home"></use>
-              </svg>
-              Dati Utente
-            </a>
-          </li>
-          
-        </ul>
+      <h1>WELCOME!</h1>
+      <div class="button">
+        <button type="button">Login</button>
+        <button type="button">Sign In</button>
       </div>
     </div>
-  </div>
-  <div class="px-3 py-2 border-bottom mb-3">
-    <div class="container d-flex flex-wrap justify-content-center">
-      <div class="text-end">
-        <button type="button" class="btn btn-light text-dark me-2 align-items-left" href="src\app\login\login.component.html">Accedi</button>
-        <button type="button" class="btn btn-primary">Registrazione</button>
-      </div>
-    </div>
-  </div>
-  <h3>{{test.id}}</h3>
-</body>
-
-<body>
-</body>
+  </body>
+</html>
