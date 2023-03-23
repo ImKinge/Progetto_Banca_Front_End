@@ -30,9 +30,18 @@ header {
 }
 
 .logo {
+  position: relative;
   font-size: 2em;
   color: white;
   user-select: none; /*Specifica se l’utente può o non può selezionare l’elemento*/
+  justify-content: center;
+  align-items: center;
+}
+
+h2 .icon-logo {
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 2px;
 }
 
 .navigation a {
@@ -64,7 +73,7 @@ header {
 }
 
 .navigation .btnLogin {
-  width: 130px;
+  width: 110px;
   height: 50px;
   background: transparent;
   border: 2px solid white;
@@ -75,7 +84,6 @@ header {
   font-size: 1.1em;
   color: white;
   font-weight: 500;
-  margin-left: 40px;
   transition: .5s;
 }
 
@@ -118,3 +126,69 @@ header {
   border-bottom: 2px solid white;
   margin: 30px 0;
 }
+
+.input-box label {
+  position: absolute;
+  top:50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: white;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: -5px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  color: white;
+  font-size: 1.2em;
+  top: 12px;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  font-size: 1em;
+  color: royalblue;
+  font-weight: 700; /*Permette di impostare l'aspetto dello spessore di un testo*/
+}
+
+.login-register {
+  font-size: .9em;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  font-weight: 600;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.login-register p a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
