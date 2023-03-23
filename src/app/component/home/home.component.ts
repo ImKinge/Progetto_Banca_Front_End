@@ -12,20 +12,25 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   test : any;
+  message = "WELCOME!";
+
 
   constructor(private cliente:ClienteService, private router:Router){};
-  
+
 ngOnInit():void{
   this.cliente.findAllClienti().subscribe(
     (data : AnagraficaCliente[])=>{
       this.test = data[0];
     }
     );
- 
+
   //this.cliente.findProprietarioById('svlgrl').subscribe(data =>{console.log(data)});
   //this.router.navigate(['dati-bancari']);
 }
 
+goToLogin() {
+  this.router.navigate(["login"]);
+}
 
 
 }

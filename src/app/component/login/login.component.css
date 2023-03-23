@@ -63,7 +63,7 @@ h2 .icon-logo {
   background: white;
   border-radius: 5px;
   transform-origin: right;
-  transform: scaleX(0);
+  transform: scaleX(0); /*Permette di creare effetti grafici senza l'uso di js*/
   transition: transform .5s;
 }
 
@@ -130,7 +130,7 @@ h2 .icon-logo {
 .input-box label {
   position: absolute;
   top:50%;
-  left: 5px;
+  left: 1px;
   transform: translateY(-50%);
   font-size: 1em;
   color: white;
@@ -149,6 +149,7 @@ h2 .icon-logo {
   background: transparent;
   border: none;
   outline: none;
+
 }
 
 .btn {
@@ -172,10 +173,20 @@ h2 .icon-logo {
   margin: 25px 0 10px;
 }
 
-.login-register p a {
-  font-weight: 600;
+.login-register p button {
+  width: 30%;
+  height: 40px;
+  font-weight: 700;
   padding: 10px;
+  background: white;
   text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  text-align: center;
+  color: royalblue;
+  outline: none;
 }
 
 .login-register p a:hover {

@@ -13,6 +13,7 @@ import { RegistrazioneComponent } from './component/registrazione/registrazione.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminComponent } from './component/admin/admin.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { AdminComponent } from './component/admin/admin.component';
     MovimentiCartaComponent,
     RegistrazioneComponent,
     AdminComponent
-    
+
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

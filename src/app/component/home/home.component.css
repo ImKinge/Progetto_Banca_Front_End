@@ -107,7 +107,7 @@ h2 .icon-logo {
   margin-top: 30px;
 }
 
-button {
+.button button{
   width: 20%;
   height: 40px;
   margin:20px;
@@ -119,10 +119,12 @@ button {
   font-size: 1em;
   color: white;
   font-weight: 700; /*Permette di impostare l'aspetto dello spessore di un testo*/
+  transition: .5s;
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .2);
 }
 
 button:hover {
   background:white;
   color: deepskyblue;
-  transition: .5s;
 }

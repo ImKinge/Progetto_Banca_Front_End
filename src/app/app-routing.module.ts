@@ -19,7 +19,8 @@ const routes: Routes = [
   {path:'dati-utente', component:DatiUtenteComponent},
   {path: 'dati-bancari', component: DatiBancariComponent},
   {path:'movimenti-carta', component:MovimentiCartaComponent},
-  {path:'movimenti-conto', component:MovimentiContoComponent}
+  {path:'movimenti-conto', component:MovimentiContoComponent},
+  {path: "", component:HomeComponent}
 
 ];
 
@@ -27,8 +28,8 @@ const routes: Routes = [
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })
-export class AppRoutingModule { 
-  
-  
+export class AppRoutingModule {
+
+
 }
 
