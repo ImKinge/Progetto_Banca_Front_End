@@ -1,5 +1,10 @@
+import{Injectable} from '@angular/core';
+
+@Injectable({
+    providedIn:'root'
+})
 export class AnagraficaCliente {
-    public id = null;
+    public id =null;
     public nome = null;
     public cognome = null;
     public dataDiNascita = null;
