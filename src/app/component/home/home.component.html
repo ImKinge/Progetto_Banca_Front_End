@@ -3,21 +3,11 @@
     <link rel="stylesheet" href="home.component.css">
   </head>
   <body>
-    <header>
-      <h2 class="logo">YourBank</h2>
-      <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Contact</a>
-        <button class="btnLogin">Login</button>
-      </nav>
-    </header>
     <div class="container">
       <h1>{{message}}</h1>
       <div class="button">
         <button (click) = "goToLogin()" type="button">Login</button>
-        <button type="button">Sign In</button>
+        <button (click) = "goToRegistration()"type="button">Sign In</button>
       </div>
     </div>
   </body>

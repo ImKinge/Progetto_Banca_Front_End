@@ -7,4 +7,5 @@ export class AnagraficaCliente {
     public recapitoTelefonico = null;
     public indirizzo = null;
 
+
 }
