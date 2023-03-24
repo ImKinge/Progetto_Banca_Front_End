@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class RegistrazioneComponent {
   message = "Anagraphic User Data";
 
-  constructor(private router:Router){};
+  //constructor(private router:Router){};
 
 
 }

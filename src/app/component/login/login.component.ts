@@ -22,7 +22,7 @@ export class LoginComponent {
     });
   }
 }
-
+/*
   constructor( private router:Router){};
 
   goToRegistration() {
@@ -32,5 +32,6 @@ export class LoginComponent {
   goToDatiUtenti() {
     this.router.navigate(["dati-utente"]);
   }
-}
+  */
+
 
