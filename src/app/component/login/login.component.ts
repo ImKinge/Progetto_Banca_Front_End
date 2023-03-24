@@ -18,6 +18,4 @@ export class LoginComponent {
       this.info=data;
     });
   }
-
-
 }

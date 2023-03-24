@@ -12,17 +12,18 @@ import { DatiBancari } from 'src/app/models/datiBancari';
 
 
 export class AdminComponent {
-  
+
 
   infoClienti: any;
-  infoUtenti:any;
-  infoBanca:any;
+  infoUtenti: any;
+  infoBanca: any;
+  codiceFiscale:any;
 
-  constructor(private servizi: ClienteService,private cliente: AnagraficaCliente, private utente:DatiUtente, private dBanca:DatiBancari) { };
+  constructor(private servizi: ClienteService, private cliente: AnagraficaCliente, private utente: DatiUtente, private dBanca: DatiBancari) { };
 
   ngOnInit(): void {
   }
-  
+
   ngAfterContentInit() {
     this.servizi.findAllClienti().subscribe(
       (data: AnagraficaCliente[]) => {
@@ -30,15 +31,18 @@ export class AdminComponent {
       }
     );
 
-    this.servizi.findAllUtenti().subscribe((data:DatiUtente[]) =>{
-      this.infoUtenti=data;
+    this.servizi.findAllUtenti().subscribe((data: DatiUtente[]) => {
+      this.infoUtenti = data;
     });
-    this.servizi.findAllDatiBancari().subscribe((data:DatiBancari[])=>{
-      this.infoBanca=data;
+    this.servizi.findAllDatiBancari().subscribe((data: DatiBancari[]) => {
+      this.infoBanca = data;
     });
-
+/*
     this.servizi.saveCliente(this.cliente).subscribe().add;
 
+    this.servizi.deleteClinte(this.codiceFiscale).subscribe().remove;
+  */
+  
   }
 
 

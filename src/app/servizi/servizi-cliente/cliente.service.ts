@@ -18,18 +18,20 @@ export class ClienteService {
 
 
   //chiamate cliente
-  saveCliente(body:any) {
+ /* saveCliente(body:any) {
     return this.http.post(this.baseUrlCliente + '/save', body);
   }
- /* updateCliente(body:any){
+  updateCliente(body:any){
     return this.http.put(this.baseUrlCliente+'/update', body);
   }
   deleteClinte(codiceFiscale:any){
     return this.http.delete(this.baseUrlCliente+'/delete/'+codiceFiscale);
   }
+  */
   findProprietarioById(codiceFiscale: any) {
-    return this.http.get(this.baseUrlCliente + '/find-proprietario/' + codiceFiscale);
+    return this.http.get<AnagraficaCliente>(this.baseUrlCliente + '/find-proprietario/' + codiceFiscale);
   }
+  /*
   findUtenteById(codiceFiscale:any){
     return this.http.get(this.baseUrlCliente+'/find-utente/'+codiceFiscale);
   }
@@ -57,6 +59,9 @@ export class ClienteService {
   }
   findAllClienti() {
     return this.http.get<AnagraficaCliente[]>(this.baseUrlCliente + '/find-proprietari');
+  }
+  findBancaByCodicefiscale(codiceFiscale:any){
+    return this.http.get<DatiBancari>(this.baseUrlConto+'/conto-by-codicefiscale/'+ codiceFiscale);
   }
  /*  saveCarta(bodyCarta:number){
     return this.http.put(this.baseUrlConto+'/save/carta',bodyCarta);
