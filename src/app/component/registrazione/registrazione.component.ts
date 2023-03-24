@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
-import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-registrazione',
@@ -8,13 +6,9 @@ import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
   styleUrls: ['./registrazione.component.css']
 })
 export class RegistrazioneComponent {
+  message = "Anagraphic User Data";
 
+  constructor(private router:Router){};
 
-  constructor(private service:ClienteService, private cliente:AnagraficaCliente){};
-
-  ngOnInit(){
-    //this.service.saveCliente(this.cliente).subscribe().add;
-
-  }
 
 }
