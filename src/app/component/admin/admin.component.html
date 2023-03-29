@@ -1,1 +1,87 @@
 <p>admin works!</p>
+<html>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<body>
+    <div>
+        <h2>Lista dei titolari:</h2>
+        <table>
+            <ul *ngFor="let utente of infoUtenti">
+                <tr>
+                    <th>codice titolare</th>
+                    <th>codice fiscale</th>
+                </tr>
+                <td>{{utente.id}}</td>
+              <td>{{utente.codiceFiscale}}</td>
+            </ul>
+        </table>
+    </div>
+
+
+    <div>
+        <h2>Lista Clienti Banca:</h2>
+        <table>
+            <ul *ngFor="let cliente of infoClienti">
+                <tr>
+                    <th>codice fiscale</th>
+                    <th>nome</th>
+                    <th>cognome</th>
+                    <th>data di nascita</th>
+
+                </tr>
+                <tr>
+                    <td>{{cliente.codiceFiscale}}</td>
+                    <td>{{cliente.nome}}</td>
+                    <td>{{cliente.cognome}}</td>
+                    <td>{{cliente.dataDiNascita}}</td>
+                </tr>
+            </ul>
+
+        </table>
+    </div>
+    <h2>Lista Dati Bancari:</h2>
+    <table>
+        <div>
+
+            <ul *ngFor="let dati of infoBanca">
+                <tr>
+                    <th>Iban</th>
+                    <th>saldo Iban </th>
+                    <th>carta di credito </th>
+                    <th>saldo carta di credito </th>
+                </tr>
+                <tr>
+
+                    <td>{{dati.iban}}</td>
+                    <td>{{dati.saldoIban}}</td>
+                    <td>{{dati.cartaDiCredito}}</td>
+                    <td>{{dati.saldoCartaDiCredito}}</td>
+
+
+                </tr>
+            </ul>
+        </div>
+    </table>
+
+</body>
+
+<button type="button" class="buttonDelete">Remove Cliente</button>
+
+</html>
