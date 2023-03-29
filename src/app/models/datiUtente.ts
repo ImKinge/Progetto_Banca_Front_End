@@ -1,3 +1,6 @@
 export class DatiUtente{
-    public id: number | undefined;
+    public iban: string = '';
+    public ibanBalance: string = '';
+    public creditCard: string = '';
+    public balanceCredit: string = ''
 }

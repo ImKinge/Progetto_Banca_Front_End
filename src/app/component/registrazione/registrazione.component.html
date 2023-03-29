@@ -1,57 +1,53 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="registrazione.component.css">
-  </head>
-  <body>
+
     <div class="container">
-      <div class="form-box">
-        <h2>{{message}}</h2>
-        <form action="#">
-          <div class="block-line">
-            <div class="input-box">
-              <input type="text" required>
-              <label>Id</label>
+      <div class="card-style">
+        <div class="form-box">
+          <h2>{{message}}</h2>
+          <form action="#">
+            <div class="block-line">
+              <div class="input-box">
+                <input type="text" required>
+                <label>Id</label>
+              </div>
+              <div class="input-box">
+                <input type="text" required>
+                <label>Name</label>
+              </div>
             </div>
-            <div class="input-box">
-              <input type="text" required>
-              <label>Name</label>
+            <div class="block-line">
+              <div class="input-box">
+                <input type="text" required>
+                <label>Pin</label>
+              </div>
+              <div class="input-box">
+                <input type="text" required>
+                <label>Firstname</label>
+              </div>
             </div>
-          </div>
-          <div class="block-line">
-            <div class="input-box">
-              <input type="text" required>
-              <label>Pin</label>
+            <div class="block-line">
+              <div class="input-box">
+                <input type="date" required>
+                <label class="data"></label>
+              </div>
+              <div class="input-box">
+                <input type="tel" required>
+                <label>Telephone Number </label>
+              </div>
             </div>
-            <div class="input-box">
-              <input type="text" required>
-              <label>Firstname</label>
+            <div class="block-line">
+              <div class="input-box">
+                <input type="text" required>
+                <label>Address</label>
+              </div>
+              <div class="input-box">
+               <input type="email" required>
+                <label>Email</label>
+              </div>
             </div>
-          </div>
-          <div class="block-line">
-            <div class="input-box">
-              <input type="date" required>
-              <label class="data">Date Of Birth</label>
+            <div>
+              <button (click) = "goToDatiUtenti()" type="submit" class="btn">Sign In</button>
             </div>
-            <div class="input-box">
-              <input type="tel" required>
-              <label>Telephone Number </label>
-            </div>
-          </div>
-          <div class="block-line">
-            <div class="input-box">
-              <input type="text" required>
-              <label>Address</label>
-            </div>
-            <div class="input-box">
-             <input type="email" required>
-              <label>Email</label>
-            </div>
-          </div>
-          <div>
-            <button (click) = "goToDatiUtenti()" type="submit" class="btn">Sign In</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </body>
-</html>

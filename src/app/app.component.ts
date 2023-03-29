@@ -16,8 +16,8 @@ export class AppComponent {
 
 
 
-goToLogin() {
-  this.router.navigate(["login"]);
+  goToHome() {
+  this.router.navigate(["home"]);
   }
 }
 

@@ -1,78 +1,63 @@
-/*NAVBAR*/
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 100px;
-  display: flex; /* permette di disporre gli elementi in fila*/
-  justify-content: space-between;/*inserisce dello spazio al centro degli elementi*/
-  align-items: center;
-  z-index: 99; /*serve per controllare quali elementi verranno disposti “sopra” o “sotto” rispetto alla profondità dello schermo*/
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, .5);
-  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+.root-container {
+  display: flex;
 }
 
-.logo {
-  position: relative;
-  font-size: 2em;
-  color: white;
-  user-select: none; /*Specifica se l’utente può o non può selezionare l’elemento*/
+.navbar {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 10%;
+  min-width: 10%;
+  border-right: 2px solid lightgrey;
 }
 
-h2 .icon-logo {
+.nav-item {
+  display: flex;
+  align-items: center
+}
+
+.nav-title h3{
+  font-size: 20px;
+}
+
+.container-element {
+  position: relative;
+  height: 800px;
+}
+
+.btn {
+  position: relative;
+  top: 50px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: black;
+}
+
+.material-icons {
+  position: relative;
+  top: 50px;
+}
+
+.container-logout {
   position: absolute;
-  margin-left: 5px;
-  margin-top: 2px;
+  bottom: 70px;
 }
 
-.navigation a {
-  position: relative; /*L'elemento viene posizionato relativamente al suo box contenitore*/
-  font-size: 1.1em;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 40px;
-}
+/*html {*/
+/*  height: 0;*/
+/*}*/
 
-.navigation a::after {
-  content: ''; /* */
-  position: absolute; /*L'elemento viene rimosso dal normale flusso del documento*/
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: white;
-  border-radius: 5px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
+/*.navbar {*/
+/*  justify-content: space-between;*/
+/*}*/
 
-.navigation a:hover::after {
-  transform-origin: right;
-  transform: scaleX(1);
-}
+/*span {*/
+/*  padding-right: 40px;*/
+/*}*/
 
-.navigation .btnLogin {
-  width: 110px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid white;
-  margin-left: 40px;
-  outline: none;
-  border-radius: 6px;
-  cursor:pointer;
-  font-size: 1.1em;
-  color: white;
-  font-weight: 500;
-  transition: .5s;
-}
-
-.navigation .btnLogin:hover {
-  background:white;
-  color: deepskyblue;
-}
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/

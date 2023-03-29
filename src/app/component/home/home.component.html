@@ -1,14 +1,65 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="home.component.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1>{{message}}</h1>
-      <div class="button">
-        <button (click) = "goToLogin()" type="button">Login</button>
-        <button (click) = "goToRegistration()"type="button">Sign In</button>
+<div class="main-container flex-container margin">
+
+  <!-- Prima colonna-->
+  <div class="flex-container-column margin-element ">
+    <h3 class="title">My Card</h3>
+    <div class="card-container flex-container">
+      <div class="flex-container-column fonts">
+        <img src="img/visa.png">
+        <img src="img/chip.png">
+        <h5 class="property">Titolare carta</h5>
+      </div>
+      <div class="flex-container-column fonts">
+        <h3>Logo</h3>
       </div>
     </div>
-  </body>
-</html>
+    <div class="margin-items">
+      <div class="flex-container">
+        <h3 class="title">Card transaction</h3>
+        <span class="material-symbols-outlined arrow">trending_flat</span>
+      </div>
+      <table class="table table-borderless">
+        <tr>
+          <th scope="col">Spotify</th>
+          <th scope="col">$ 49.43</th>
+        </tr>
+        <tr>
+          <th scope="col">Apple</th>
+          <th scope="col">$ 1299.99</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!--Seconda colonna -->
+  <div class="flex-container-column margin">
+    <h3>$ 3.500</h3>
+    <h4>budget</h4>
+    <div class="flex-container">
+      <h3 class="title">Transaction</h3>
+      <span class="material-symbols-outlined arrow">trending_flat</span>
+    </div>
+    <table class="table table-borderless">
+      <tr>
+        <th scope="col">Spotify</th>
+        <th scope="col">$ 49.43</th>
+      </tr>
+      <tr>
+        <th scope="col">Apple</th>
+        <th scope="col">$ 1299.99</th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+<!--  <div class="container">-->
+<!--    <h2 class="home-title">WELCOME!</h2>-->
+<!--      <div class="btn">-->
+<!--        <button (click) = "goToLogin()" mat-raised-button color="primary">Login</button>-->
+<!--        <button (click) = "goToRegistration()" mat-raised-button color="primary">Sign In</button>-->
+<!--      </div>-->
+<!--  </div>-->

@@ -31,7 +31,7 @@ export class ClienteService {
     return this.http.get(this.baseUrlCliente + '/find-proprietario/' + codiceFiscale);
   }
   findUtenteById(codiceFiscale:any){
-    return this.http.get(this.baseUrlCliente+'/find-utente/'+codiceFiscale);
+    return this.http.get<DatiUtente>("./assets/data/find-utente.json");
   }
   findDatiById(codiceFiscale:any){
     return this.http.get(this.baseUrlConto+'/conto-by-codicefiscale/'+codiceFiscale);
@@ -45,6 +45,10 @@ export class ClienteService {
   }
   findSaldoByCarta(carta:any){
     return this.http.get(this.baseUrlConto+'/listamovimenti/cartadicredito'+carta);
+  }
+
+  findListaMovimentiCarta(id: any) {
+    return this.http.get<DatiUtente>("./assets/data/movement-list.json");
   }
 
   //chiamate admin

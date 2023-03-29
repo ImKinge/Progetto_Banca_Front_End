@@ -1,11 +1,44 @@
-<header>
-  <h2 class="logo">YourBank</h2>
-  <nav class="navigation">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Service</a>
-    <a href="#">Contact</a>
-    <button (click) = "goToLogin()" class="btnLogin">Login</button>
-  </nav>
-</header>
+<!--  Intestaione-->
+<div class="root-container">
+    <div class="navbar">
+      <div class="container-element">
+        <ul class="nav flex-column">
+          <li class="nav-title">
+            <h3>GlobalBank</h3>
+          </li>
+          <li class="nav-item">
+            <span class="material-icons">home</span>
+            <button type="button" class="btn btn-dark"> Overview</button>
+          </li>
+          <li class="nav-item">
+            <span class="material-icons">person</span>
+            <button type="button" class="btn btn-dark"> Profile</button>
+          </li>
+          <li class="nav-item">
+            <span class="material-icons">wallet</span>
+            <button type="button" class="btn btn-dark"> Wallet</button>
+          </li>
+          <li class="nav-item">
+            <span class="material-icons">grid_view</span>
+            <button type="button" class="btn btn-dark"> Reports</button>
+          </li>
+          <div class="container-logout">
+            <li class="nav-item logout">
+              <span class="material-icons logout">logout</span>
+              <button type="button" class="btn logout btn-dark"> Log out</button>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
 <router-outlet></router-outlet>
+</div>
+
+<!--  <mat-toolbar color="primary" class="navbar">-->
+<!--    <span>YOURBANK</span>-->
+<!--    <div>-->
+<!--      <span>Home</span>-->
+<!--      <span>About</span>-->
+<!--      <span>Service</span>-->
+<!--    </div>-->
+<!--  </mat-toolbar>-->

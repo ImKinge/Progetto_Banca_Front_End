@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MovimentiContoComponent } from './movimenti-conto.component';
+import { MovimentiComponent } from './movimenti.component';
 
 describe('MovimentiContoComponent', () => {
-  let component: MovimentiContoComponent;
-  let fixture: ComponentFixture<MovimentiContoComponent>;
+  let component: MovimentiComponent;
+  let fixture: ComponentFixture<MovimentiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovimentiContoComponent ]
+      declarations: [ MovimentiComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MovimentiContoComponent);
+    fixture = TestBed.createComponent(MovimentiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

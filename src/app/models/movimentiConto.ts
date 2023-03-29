@@ -1,4 +1,5 @@
 export class MovimentoConto{
-    public id:number|undefined;
-    public movimentiCarta:number|undefined;
+  public description: string = "";
+  public amount: number |undefined;
+  public id: number|undefined;
 }
