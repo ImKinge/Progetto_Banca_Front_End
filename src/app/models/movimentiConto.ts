@@ -4,7 +4,11 @@ import{Injectable} from '@angular/core';
     providedIn:'root'
 })
 export class MovimentoConto{
-  public description: string = "";
-  public amount: number |undefined;
-  public id: number|undefined;
+  public iban: string|undefined;
+  public amountIban: number |undefined;
+  public date:Date|undefined;
+  public descriptionTransactional: string |undefined;
+  public fiscalCode: string| undefined;
+  
+  
 }

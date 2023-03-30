@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdminComponent } from './component/admin/admin.component';
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BonificoComponent } from './component/bonifico/bonifico.component';
+import { TransactionIbanComponent } from './component/movimenti/transaction-iban/transaction-iban.component';
+import { TransactionCardComponent } from './component/movimenti/transaction-card/transaction-card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BonificoComponent } from './component/bonifico/bonifico.component';
     RegistrazioneComponent,
     AdminComponent,
     BonificoComponent,
+    TransactionIbanComponent,
+    TransactionCardComponent,
   ],
   imports: [
     BrowserModule,

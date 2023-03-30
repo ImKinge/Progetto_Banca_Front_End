@@ -1,0 +1,51 @@
+<div class="main-container flex-container margin"></div>
+<div class="flex-container-column margin-element">
+  <h3 class="title">My Card</h3>
+
+  <body>
+    <div class="card-container flex-container">
+
+      <div>
+        <div class="flex-container-column fonts first-column">
+          <strong><i class="fa-brands fa-cc-visa transaction" style="color: #ffffff;"></i>
+            <p>{{numberCard}}</p>
+          </strong>
+          <i class="fa-sharp fa-solid fa-microchip transaction" style="color: #ffffff;"></i>
+          <h5 class="property-card">Titolare carta</h5>
+        </div>
+      </div>
+      <div class="flex-container-column fonts">
+        <i class="fa-brands fa-joomla" style="color: #ffffff;"></i>
+      </div>
+
+    </div>
+  </body>
+  <div class="margin-items">
+    <div class="flex-container">
+      <h3 class="title">Card transaction</h3>
+      <span class="material-symbols-outlined arrow">trending_flat</span>
+    </div>
+    <div class="flex-container table-container">
+      <table class="table table-borderless">
+        <tbody>
+          <ol *ngFor="let transactio of infoCard">
+            <tr>
+              <td></td>
+              <th scope="col">{{transactio.descriptionTransaction}}:</th>
+              <th scope="col">€ {{transactio.amountCard}}</th>
+              <th scope="col"></th>
+            </tr>
+          </ol>
+
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <form>
+        <button mat-button>Payment</button>
+        <input type="number" id="amountPayment" name="amountPayment"><br><br>
+      </form>
+    </div>
+  </div>
+
+</div>

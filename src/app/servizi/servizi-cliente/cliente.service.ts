@@ -10,8 +10,8 @@ import { MovimentoConto } from 'src/app/models/movimentiConto';
 })
 export class ClienteService {
 
-  baseUrlCliente = 'http://localhost:8080/cliente';
-  baseUrlConto ="http://localhost:8080/dati-bancari";
+  baseUrlCliente = 'http://localhost:8080/client';
+  baseUrlConto ="http://localhost:8080/info-bank";
 
   constructor(private http: HttpClient) { }
 
@@ -34,22 +34,34 @@ export class ClienteService {
     return this.http.get(this.baseUrlCliente+'/find-utente/'+codiceFiscale);
   }
   findDatiById(codiceFiscale:any){
-    return this.http.get(this.baseUrlConto+'/conto-by-codicefiscale/'+codiceFiscale);
+    return this.http.get(this.baseUrlConto+'/bank-by-fiscalCode/'+codiceFiscale);
   }
-  findContoByIban(iban:any){
-    return this.http.get(this.baseUrlConto+'/conto-by-iban/'+iban);
+  findInfoBankByIban(iban:any){
+    return this.http.get<DatiBancari>(this.baseUrlConto+'/bank-by-iban/'+iban);
   }
-
-  findSaldoByIban(iban:any){
-    return this.http.get(this.baseUrlConto+'/lista-movimenti/conto/'+iban);
+  findIbanTransactionByIban(iban:any){
+    return this.http.get<MovimentoConto[]>(this.baseUrlConto+'/history-list/iban/'+iban);
   }
-  findSaldoByCarta(carta:any){
-    return this.http.get(this.baseUrlConto+'/listamovimenti/cartadicredito'+carta);
+  findCardTransactionsByCard(card:number){
+    return this.http.get<MovimentiCarta[]>(this.baseUrlConto+'/history-list/creditCard/'+card);
   }
+  transfers(iban:any){
+    return this.http.post(this.baseUrlConto+'/transaction/transfers/iban',iban);
+  }
+  transfersReceived(iban:any){
+    return this.http.post(this.baseUrlConto+'/transaction/transfers-received/iban',iban);
+  }
+  payments(card:any){
+    return this.http.post(this.baseUrlConto+'/transaction/payments/card',card);
+  }
+  receivedAmountCard(card:any){
+    return this.http.post(this.baseUrlConto,'transaction/received/card',card);
+  }
+  
 
   //chiamate admin
-  findAllDatiBancari(){
-    return this.http.get<DatiBancari>(this.baseUrlConto+'/all-dati-bancari');
+  findAllInfoBanks(){
+    return this.http.get<DatiBancari>(this.baseUrlConto+'/all-info-banks');
   }
   findAllUtenti(){
     return this.http.get<DatiUtente[]>(this.baseUrlCliente+'/find-utenti');
@@ -57,10 +69,15 @@ export class ClienteService {
   findAllClienti() {
     return this.http.get<AnagraficaCliente[]>(this.baseUrlCliente + '/find-proprietari');
   }
-  saveCarta(bodyCarta:number){
-    return this.http.put(this.baseUrlConto+'/save/carta',bodyCarta);
+  saveCard(bodyCard:number){
+    return this.http.put(this.baseUrlConto+'/save/card',bodyCard);
   }
-  saveConto(bodyConto:any){
-    return this.http.put(this.baseUrlConto+'/save/iban',bodyConto);
+  saveIban(bodyIban:any){
+    return this.http.put(this.baseUrlConto+'/save/iban',bodyIban);
   }
+  findBankByClienteId(fiscalCode:any){
+    return this.http.get<DatiBancari>(this.baseUrlConto+"/bank-by-fiscalCode/"+fiscalCode);
+  }
+
+
 }

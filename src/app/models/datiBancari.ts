@@ -4,10 +4,11 @@ import{Injectable} from '@angular/core';
     providedIn:'root'
 })
 export class DatiBancari{
-    public saldoIban: any;
-    public saldoCartaDiCredito: any;
-    public cartaDiCredito: any;
-    public iban : any;
+    public ibanBalance: number|undefined;
+    public cardBalance: number|undefined;
+    public creditCard: number|undefined;
+    public iban : string|undefined;
+    public fiscalCode:string|undefined;
 
 
 }

@@ -1,0 +1,40 @@
+<div class="flex-container-column margin-element">
+    
+    <div class="budget">
+      <i class="fa-solid fa-coins" style="color: #000000;"></i>
+      <h3>{{infoBank.ibanBalance}}</h3>
+      <h4>budget</h4>
+    </div>
+    <div class="margin-items">
+      <div class="flex-container">
+        <h3 class="title">Transaction</h3>
+        <span class="material-symbols-outlined arrow">trending_flat</span>
+      </div>
+      <table class="table table-borderless">
+        
+        <tbody><ol *ngFor="let info of infoIban">
+          <tr>
+            <th scope="col">{{info.descriptionTransactional}} </th>
+            <th scope="col">€ {{info.amountIban}}</th>
+          </tr>
+          
+          </ol>
+        </tbody>
+    
+      </table>
+      <div class="margin-items">
+        <div class="flex-container">
+          <div class="flex-container container-money-save">
+            <div class="square">
+              <h6><strong>75%</strong></h6>
+            </div>
+            <div class="container-description">
+              <h5 class="save-money">You save money</h5>
+              <h3>30.09.2020 <i class="fa-solid fa-arrow-right" style="color: white;"></i></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
