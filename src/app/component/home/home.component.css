@@ -27,10 +27,28 @@
   color: white;
 }
 
-.property {
-  margin-top: 6vw;
-  font-size: 12px;
+i {
+  font-size: 3vh;
+}
+
+i.fa-joomla {
+  font-size: 8vh;
+}
+
+i.fa-coins {
+  font-size: 8vh;
+}
+
+.transaction {
+  font-size: 4vh;
+  margin-top: 30%;
+}
+
+.property-card {
+  font-size: 80%;
   color: gray;
+  margin-top: 60%;
+  margin-bottom: 30%;
 }
 
 .margin-element {
@@ -42,41 +60,56 @@
 }
 
 .arrow  {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
-.title {
+table {
+  margin-top: 10%;
 }
 
-.table {
+.budget {
   text-align: center;
 }
 
+.square {
+  position: relative;
+  left: 2vw;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 10px;
 
-/*.container {*/
-/*  display: flex;*/
-/*  width: 400px;*/
-/*  height: calc(100vh - 64px);*/
-/*  position: relative;*/
-/*  margin: auto;*/
-/*  flex-direction: column;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*}*/
+}
 
-/*.home-title{*/
-/*  font-size: 50px !important;*/
-/*}*/
+.square h6 {
+  color: black;
+  font-size: 15px;
+}
 
+.container-money-save {
+  width: 30vw;
+  height: 8vh;
+  background-color: black;
+  border-radius: 20px 0 0 20px;
+  color: white;
+  margin-left: 20%;
 
-/*!*.menu {*!*/
-/*!*  position: absolute;*!*/
-/*!*  top:50%;*!*/
-/*!*  left: 50%;*!*/
-/*!*}*!*/
+}
 
-/*!*.mat-display-1 {*!*/
-/*!*  font-size: 80px;*!*/
-/*!*}*!*/
+.container-description{
+  margin-left: 20%;
 
+}
 
+.save-money {
+  position: relative;
+  top: 8px;
+  font-size: 80%;
+  color: gray;
+}
+
+.fa-arrow-right {
+  position: relative;
+  left: 10%;
+  bottom: 1vh;
+}

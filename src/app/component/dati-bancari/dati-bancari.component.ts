@@ -19,13 +19,16 @@ export class DatiBancariComponent implements OnInit {
   constructor(private service: ClienteService) { };
 
   ngOnInit(): void {
-    this.service.findBancaByCodicefiscale(this.codiceFiscale).subscribe(
-      (data: DatiBancari) => {
-      this.infoBanca = data;
-    });
-
-    this.service.findProprietarioById(this.codiceFiscale).subscribe(
-      (data:AnagraficaCliente)=>{this.infoCliente=data;});
   }
+  //
+  // ngOnInit(): void {
+  //   this.service.findBancaByCodicefiscale(this.codiceFiscale).subscribe(
+  //     (data: DatiBancari) => {
+  //     this.infoBanca = data;
+  //   });
+
+  //   this.service.findProprietarioById(this.codiceFiscale).subscribe(
+  //     (data:AnagraficaCliente)=>{this.infoCliente=data;});
+  // }
 }
 

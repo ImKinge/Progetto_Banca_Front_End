@@ -20,11 +20,11 @@ export class MovimentiComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cliente.findListaMovimentiCarta("test").subscribe(pippo => {
-
-    }
-
-    )
+    //this.cliente.findListaMovimentiCarta("test").subscribe(pippo => {
+    //
+    // }
+    //
+    // )
 
   }
 
