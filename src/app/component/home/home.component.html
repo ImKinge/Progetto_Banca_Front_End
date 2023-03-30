@@ -2,15 +2,15 @@
 
   <!-- Prima colonna-->
   <div class="flex-container-column margin-element">
-    <h3 class="title">My Card</h3>
+    <h3 class="top-element">my Card</h3>
     <div class="card-container flex-container">
       <div class="flex-container-column fonts first-column">
-        <i class="fa-brands fa-cc-visa transaction" style="color: #ffffff;"></i>
-        <i class="fa-sharp fa-solid fa-microchip transaction" style="color: #ffffff;"></i>
+        <img src="assets/img/visa.png" style="width: 70px">
+        <img class="chip" src="assets/img/chip.png" style="width: 40px">
         <h5 class="property-card">Titolare carta</h5>
       </div>
-      <div class="flex-container-column fonts">
-        <i class="fa-brands fa-joomla" style="color: #ffffff;"></i>
+      <div class="flex-container-column">
+        <img class="logo-global" src="assets/img/global.png" style="width: 90px">
       </div>
     </div>
     <div class="margin-items">
@@ -22,12 +22,20 @@
         <table class="table table-borderless">
           <tbody>
             <tr>
-              <th><i class="fa-brands fa-spotify" style="color: #000000;"></i></th>
+              <div class="flex-container square color-spotify-xbox">
+                <th>
+                  <i class="fa-brands fa-spotify" style="color: #000000;"></i>
+                </th>
+              </div>
               <th scope="col">Spotify</th>
               <th scope="col">$ 49.43</th>
             </tr>
             <tr>
-              <th><i class="fa-brands fa-apple" style="color: #000000;"></i></th>
+              <div class="flex-container square color-apple">
+                <th>
+                  <i class="fa-brands fa-apple" style="color: #000000;"></i>
+                </th>
+              </div>
               <th scope="col">Apple</th>
               <th scope="col">$ 1299.99</th>
             </tr>
@@ -38,9 +46,9 @@
   </div>
 
   <!--Seconda colonna -->
-  <div class="flex-container-column margin-element">
+  <div class="flex-container-column margin-element-column2">
     <div class="budget">
-      <i class="fa-solid fa-coins" style="color: #000000;"></i>
+      <i class="fa-solid fa-coins top-element" style="color: #000000;"></i>
       <h3>$ 3.500</h3>
       <h4>budget</h4>
     </div>
@@ -52,37 +60,54 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <th><i class="fa-brands fa-spotify" style="color: #000000;"></i></th>
+            <div class="flex-container square color-spotify-xbox">
+              <th>
+                <i class="fa-brands fa-spotify" style="color: #000000;"></i>
+              </th>
+            </div>
             <th scope="col">Spotify</th>
             <th scope="col">$ 49.43</th>
           </tr>
           <tr>
-            <th><i class="fa-brands fa-apple" style="color: #000000;"></i></th>
+            <div class="flex-container square color-apple">
+              <th>
+                <i class="fa-brands fa-apple" style="color: #000000;"></i>
+              </th>
+            </div>
             <th scope="col">Apple</th>
             <th scope="col">$ 1299.99</th>
           </tr>
           <tr>
-            <th><i class="fa-brands fa-xbox" style="color: #000000;"></i></th>
-            <th scope="col">Xbox Pass</th>
-            <th scope="col">$ 49.99</th>
-          </tr>
-          <tr>
-            <th><i class="fa-brands fa-amazon" style="color: #000000;"></i></th>
+            <div class="flex-container square color-amazon">
+              <th>
+                <i class="fa-brands fa-amazon" style="color: #000000;"></i>
+              </th>
+            </div>
             <th scope="col">Amazon</th>
             <th scope="col">$ 29.99</th>
+          </tr>
+          <tr>
+            <div class="flex-container square color-spotify-xbox">
+              <th>
+                <i class="fa-brands fa-xbox" style="color: #000000;"></i>
+              </th>
+            </div>
+            <th scope="col">Xbox GP</th>
+            <th scope="col">$ 49.99</th>
           </tr>
         </tbody>
       </table>
       <div class="margin-items">
         <div class="flex-container">
           <div class="flex-container container-money-save">
-            <div class="square">
-              <h6><strong>75%</strong></h6>
+            <div class="flex-container square capacity">
+              <p>75%</p>
             </div>
-            <div class="container-description">
-              <h5 class="save-money">You save money</h5>
-              <h3>30.09.2020 <i class="fa-solid fa-arrow-right" style="color: white;"></i></h3>
+            <div class="flex-container-column">
+                <h5 class="save-money">You save money</h5>
+                <h3 class="data">30.09.2020</h3>
             </div>
+            <i class="fa-solid fa-arrow-right" style="color: white;"></i>
           </div>
         </div>
       </div>
