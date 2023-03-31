@@ -9,6 +9,7 @@ export class MovimentoConto{
   public date:Date|undefined;
   public descriptionTransactional: string |undefined;
   public fiscalCode: string| undefined;
-  
+  public ibanBeneficiary: string| undefined;
+  public fiscalCodeBeneficiary: string| undefined;
   
 }

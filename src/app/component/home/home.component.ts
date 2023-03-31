@@ -2,6 +2,9 @@ import { Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
 import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
 import {Router} from '@angular/router';
+import { MovimentoConto } from 'src/app/models/movimentiConto';
+import { DatiBancari } from 'src/app/models/datiBancari';
+import { MovimentiCarta } from 'src/app/models/movimentiCarta';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +14,35 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  iban:string="IT7894561221654987789456123";
+  numberCard:number=9833123412341234;
+  infoIban:any;
+  infoCard:any;
+  infoBank:any;
   test : any;
   message = "WELCOME!";
 
 
-  constructor(private cliente:ClienteService, private router:Router){};
+  constructor( private router:Router, private service:ClienteService){};
 
 ngOnInit():void{
-  this.cliente.findAllClienti().subscribe(
+
+  this.service.findIbanTransactionByIban(this.iban).subscribe(
+    (data:MovimentoConto[])=>{
+      this.infoIban=data;
+    });
+
+  this.service.findInfoBankByIban(this.iban).subscribe(
+    (data:DatiBancari)=>{
+        this.infoBank=data;
+    })
+
+    this.service.findCardTransactionsByCard(this.numberCard).subscribe(
+      (data:MovimentiCarta[])=>{
+      this.infoCard=data;
+    }); 
+    
+  this.service.findAllClienti().subscribe(
     (data : AnagraficaCliente[])=>{
       this.test = data[0];
     }

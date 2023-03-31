@@ -15,9 +15,16 @@ export class AppComponent {
   constructor(private router:Router){};
 
 
+  goToIban(){
+    this.router.navigate(["ibanTransaction"]);
+  }
 
   goToHome() {
   this.router.navigate(["home"]);
   }
+  goToCard(){
+    this.router.navigate(["cardTransaction"]);
+  }
+
 }
 

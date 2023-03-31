@@ -3,24 +3,26 @@
   <!-- Prima colonna-->
   <div class="flex-container-column margin-element">
     <h3 class="top-element">my Card</h3>
+    
     <div class="card-container flex-container">
       <div class="flex-container-column fonts first-column">
         <img src="assets/img/visa.png" style="width: 70px">
         <img class="chip" src="assets/img/chip.png" style="width: 40px">
-        <h5 class="property-card">Titolare carta</h5>
+        <h5 class="property-card">{{infoBank.creditCard}}</h5>
       </div>
       <div class="flex-container-column">
         <img class="logo-global" src="assets/img/global.png" style="width: 90px">
       </div>
     </div>
     <div class="margin-items">
-      <div class="flex-container">
+      <h3>€: {{infoBank.cardBalance}}</h3>
+      <div class="flex-container">        
         <h3 class="title">Card transaction</h3>
         <span class="material-symbols-outlined arrow">trending_flat</span>
       </div>
       <div class="flex-container table-container">
         <table class="table table-borderless">
-          <tbody>
+          <!--tbody>
             <tr>
               <div class="flex-container square color-spotify-xbox">
                 <th>
@@ -39,6 +41,17 @@
               <th scope="col">Apple</th>
               <th scope="col">$ 1299.99</th>
             </tr>
+          </tbody-->
+          <tbody>
+            <ol *ngFor="let transactio of infoCard">
+              <tr>
+                <td></td>
+                <th scope="col">{{transactio.descriptionTransaction}}:</th>
+                <th scope="col">€: {{transactio.amountCard}}</th>
+                <th scope="col"></th>
+              </tr>
+            </ol>
+
           </tbody>
         </table>
       </div>
@@ -49,7 +62,9 @@
   <div class="flex-container-column margin-element-column2">
     <div class="budget">
       <i class="fa-solid fa-coins top-element" style="color: #000000;"></i>
-      <h3>$ 3.500</h3>
+      <h2>{{infoBank.iban}}</h2>
+      <h3>€: {{infoBank.ibanBalance}}</h3>
+      
       <h4>budget</h4>
     </div>
     <div class="margin-items">
@@ -58,7 +73,8 @@
         <span class="material-symbols-outlined arrow">trending_flat</span>
       </div>
       <table class="table table-borderless">
-        <tbody>
+        <!--tbody>
+          
           <tr>
             <div class="flex-container square color-spotify-xbox">
               <th>
@@ -95,6 +111,15 @@
             <th scope="col">Xbox GP</th>
             <th scope="col">$ 49.99</th>
           </tr>
+        </tbody-->
+        <tbody>
+          <ol *ngFor="let info of infoIban">
+            <tr>
+              <th scope="col">{{info.descriptionTransactional}} </th>
+              <th scope="col">€ {{info.amountIban}}</th>
+            </tr>
+
+          </ol>
         </tbody>
       </table>
       <div class="margin-items">
@@ -104,8 +129,8 @@
               <p>75%</p>
             </div>
             <div class="flex-container-column">
-                <h5 class="save-money">You save money</h5>
-                <h3 class="data">30.09.2020</h3>
+              <h5 class="save-money">You save money</h5>
+              <h3 class="data">30.09.2020</h3>
             </div>
             <i class="fa-solid fa-arrow-right" style="color: white;"></i>
           </div>

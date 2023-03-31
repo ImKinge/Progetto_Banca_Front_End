@@ -8,7 +8,7 @@
           </li>
           <li class="nav-item">
             <span class="material-icons">home</span>
-            <button type="button" class="btn btn-dark"> Overview</button>
+            <button type="submit" class="btn btn-dark" (click)="goToHome()"> Overview</button>
           </li>
           <li class="nav-item">
             <span class="material-icons">person</span>
@@ -16,11 +16,11 @@
           </li>
           <li class="nav-item">
             <span class="material-icons">wallet</span>
-            <button type="button" class="btn btn-dark"> Wallet</button>
+            <button type="button" class="btn btn-dark" (click)="goToCard()" > Wallet</button>
           </li>
           <li class="nav-item">
             <span class="material-icons">grid_view</span>
-            <button type="button" class="btn btn-dark"> Reports</button>
+            <button type="submit" class="btn btn-dark" (click)="goToIban()"> Reports</button>
           </li>
           <div class="container-logout">
             <li class="nav-item logout">
@@ -32,11 +32,15 @@
       </div>
     </div>
   <div class="w-100">
-    <router-outlet></router-outlet>
-  </div>
+    <router-outlet></router-outlet> 
+    </div>
 </div>
 
-<!--  <mat-toolbar color="primary" class="navbar">-->
+<!--  
+    <app-transaction-iban></app-transaction-iban>
+ 
+  
+  <mat-toolbar color="primary" class="navbar">-->
 <!--    <span>YOURBANK</span>-->
 <!--    <div>-->
 <!--      <span>Home</span>-->
