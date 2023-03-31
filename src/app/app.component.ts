@@ -22,9 +22,6 @@ export class AppComponent {
   goToHome() {
   this.router.navigate(["home"]);
   }
-  goToCard(){
-    this.router.navigate(["cardTransaction"]);
-  }
 
 }
 
