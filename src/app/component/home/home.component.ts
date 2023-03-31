@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
 
   iban:string="IT7894561221654987789456123";
   numberCard:number=9833123412341234;
-  infoIban:any;
-  infoCard:any;
+  infoIban: MovimentoConto[]= [];
+  infoCard: MovimentiCarta[] = [];
   infoBank:any;
   test : any;
   message = "WELCOME!";
@@ -40,8 +40,8 @@ ngOnInit():void{
     this.service.findCardTransactionsByCard(this.numberCard).subscribe(
       (data:MovimentiCarta[])=>{
       this.infoCard=data;
-    }); 
-    
+    });
+
   this.service.findAllClienti().subscribe(
     (data : AnagraficaCliente[])=>{
       this.test = data[0];

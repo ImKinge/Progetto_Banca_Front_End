@@ -89,7 +89,18 @@ table {
 tr {
   display: flex;
   margin-top: 15%;
-  justify-content: space-between;
+}
+
+th.description {
+  margin-left: 20px;
+}
+
+p.import-label-negative {
+  color: red;
+}
+
+p.import-label-positive {
+  color: green;
 }
 
 .budget {
