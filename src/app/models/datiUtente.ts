@@ -1,6 +1,12 @@
+import{Injectable} from '@angular/core';
+
+@Injectable({
+    providedIn:'root'
+})
+
 export class DatiUtente{
-    public iban: string = '';
-    public ibanBalance: string = '';
-    public creditCard: string = '';
-    public balanceCredit: string = ''
+    public userCode: number=0;
+    public pin:number =0;
+    public fiscalCode:string="";
+    
 }

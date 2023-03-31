@@ -10,8 +10,10 @@ import {Transfer} from "../../models/Payment";
   templateUrl: './bonifico.component.html',
   styleUrls: ['./bonifico.component.css']
 })
+
 export class BonificoComponent implements OnInit {
 
+  /*
   valoreConto: string = '';
   datiUtente: DatiUtente;
   payment: Transfer;
@@ -32,11 +34,11 @@ export class BonificoComponent implements OnInit {
     }
 
   }
-
+*/
   ngOnInit() {
-    this.loadSaldoBonifico()
+  //  this.loadSaldoBonifico()
   }
-
+/*
   loadSaldoBonifico(simulaBonifico: boolean = false): void {
     this.http.get<DatiUtente>(simulaBonifico==false? "./assets/data/find-utente.json" : "./assets/data/replace-credit.json" ).subscribe(res => {
       this.valoreConto = res.balanceCredit;
@@ -56,4 +58,6 @@ export class BonificoComponent implements OnInit {
   goToDatiUtenti() {
     this.router.navigate(["dati-utente"]);
   }
+  */
 }
+
