@@ -14,10 +14,10 @@ import { MovimentiCarta } from 'src/app/models/movimentiCarta';
 })
 export class HomeComponent implements OnInit {
 
-  iban:string="IT1234567891234567893211234";
-  //numberCard:number=9833123412341234;
-  infoIban:any;
-  infoCard:any;
+  iban:string="IT7894561221654987789456123";
+  numberCard:number=9833123412341234;
+  infoIban: MovimentoConto[]= [];
+  infoCard: MovimentiCarta[] = [];
   infoBank:any;
   test : any;
   message = "WELCOME!";
@@ -35,14 +35,13 @@ ngOnInit():void{
   this.service.findInfoBankByIban(this.iban).subscribe(
     (data:DatiBancari)=>{
         this.infoBank=data;
-        this.service.findCardTransactionsByCard(this.infoBank.creditCard).subscribe(
-          (data:MovimentiCarta[])=>{
-          this.infoCard=data;
-        }); 
+    })
+
+    this.service.findCardTransactionsByCard(this.numberCard).subscribe(
+      (data:MovimentiCarta[])=>{
+      this.infoCard=data;
     });
 
-    
-    
   this.service.findAllClienti().subscribe(
     (data : AnagraficaCliente[])=>{
       this.test = data[0];

@@ -5,11 +5,11 @@ import{Injectable} from '@angular/core';
 })
 export class MovimentoConto{
   public iban: string|undefined;
-  public amountIban: number |undefined;
+  public amountIban: number = 0;
   public date:Date|undefined;
   public descriptionTransactional: string |undefined;
   public fiscalCode: string| undefined;
   public ibanBeneficiary: string| undefined;
   public fiscalCodeBeneficiary: string| undefined;
-  
+
 }

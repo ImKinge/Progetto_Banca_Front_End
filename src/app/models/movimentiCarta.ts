@@ -4,9 +4,9 @@ import{Injectable} from '@angular/core';
     providedIn:'root'
 })
 export class MovimentiCarta{
-   public amountCard: number |undefined;
+    public amountCard: number |undefined;
     public creditCard: number|undefined;
     public date : Date| undefined;
     public descriptionTransaction: string | undefined;
     public fiscalCode : String | undefined;
-}   
+}

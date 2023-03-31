@@ -3,7 +3,7 @@
   <!-- Prima colonna-->
   <div class="flex-container-column margin-element">
     <h3 class="top-element">my Card</h3>
-    
+
     <div class="card-container flex-container">
       <div class="flex-container-column fonts first-column">
         <img src="assets/img/visa.png" style="width: 70px">
@@ -16,42 +16,26 @@
     </div>
     <div class="margin-items">
       <h3>€: {{infoBank.cardBalance}}</h3>
-      <div class="flex-container">        
+      <div class="flex-container">
         <h3 class="title">Card transaction</h3>
         <span class="material-symbols-outlined arrow">trending_flat</span>
       </div>
       <div class="flex-container table-container">
         <table class="table table-borderless">
-          <!--tbody>
-            <tr>
-              <div class="flex-container square color-spotify-xbox">
-                <th>
-                  <i class="fa-brands fa-spotify" style="color: #000000;"></i>
-                </th>
-              </div>
-              <th scope="col">Spotify</th>
-              <th scope="col">$ 49.43</th>
-            </tr>
-            <tr>
-              <div class="flex-container square color-apple">
-                <th>
-                  <i class="fa-brands fa-apple" style="color: #000000;"></i>
-                </th>
-              </div>
-              <th scope="col">Apple</th>
-              <th scope="col">$ 1299.99</th>
-            </tr>
-          </tbody-->
           <tbody>
-            <ol *ngFor="let transactio of infoCard">
+            <div *ngFor="let info of infoCard">
               <tr>
-                <td></td>
-                <th scope="col">{{transactio.descriptionTransaction}}:</th>
-                <th scope="col">€: {{transactio.amountCard}}</th>
-                <th scope="col"></th>
+                <div class="flex-container square color-spotify-xbox">
+                  <th>
+                    <i class="fa-brands fa-spotify" style="color: #000000;"></i>
+                  </th>
+                </div>
+                <th class="description" scope="col">
+                  <p>{{info.descriptionTransaction}}</p>
+                  <p class="import-label-negative">€ -{{info.amountCard}}</p>
+                </th>
               </tr>
-            </ol>
-
+            </div>
           </tbody>
         </table>
       </div>
@@ -64,7 +48,7 @@
       <i class="fa-solid fa-coins top-element" style="color: #000000;"></i>
       <h2>{{infoBank.iban}}</h2>
       <h3>€: {{infoBank.ibanBalance}}</h3>
-      
+
       <h4>budget</h4>
     </div>
     <div class="margin-items">
@@ -73,53 +57,26 @@
         <span class="material-symbols-outlined arrow">trending_flat</span>
       </div>
       <table class="table table-borderless">
-        <!--tbody>
-          
+        <tbody>
+        <div *ngFor="let info of infoIban">
           <tr>
             <div class="flex-container square color-spotify-xbox">
               <th>
                 <i class="fa-brands fa-spotify" style="color: #000000;"></i>
               </th>
             </div>
-            <th scope="col">Spotify</th>
-            <th scope="col">$ 49.43</th>
+            <th class="description" scope="col">
+              <p>{{info.descriptionTransactional}}</p>
+              <ng-template *ngIf="info.amountIban < 0; then bloccoIf else bloccoElse"></ng-template>
+                <ng-template #bloccoIf>
+                  <p class="import-label-negative">€ {{info.amountIban}}</p>
+                </ng-template>
+                <ng-template #bloccoElse>
+                  <p class="import-label-positive">€ {{info.amountIban}}</p>
+                </ng-template>
+            </th>
           </tr>
-          <tr>
-            <div class="flex-container square color-apple">
-              <th>
-                <i class="fa-brands fa-apple" style="color: #000000;"></i>
-              </th>
-            </div>
-            <th scope="col">Apple</th>
-            <th scope="col">$ 1299.99</th>
-          </tr>
-          <tr>
-            <div class="flex-container square color-amazon">
-              <th>
-                <i class="fa-brands fa-amazon" style="color: #000000;"></i>
-              </th>
-            </div>
-            <th scope="col">Amazon</th>
-            <th scope="col">$ 29.99</th>
-          </tr>
-          <tr>
-            <div class="flex-container square color-spotify-xbox">
-              <th>
-                <i class="fa-brands fa-xbox" style="color: #000000;"></i>
-              </th>
-            </div>
-            <th scope="col">Xbox GP</th>
-            <th scope="col">$ 49.99</th>
-          </tr>
-        </tbody-->
-        <tbody>
-          <ol *ngFor="let info of infoIban">
-            <tr>
-              <th scope="col">{{info.descriptionTransactional}} </th>
-              <th scope="col">€ {{info.amountIban}}</th>
-            </tr>
-
-          </ol>
+        </div>
         </tbody>
       </table>
       <div class="margin-items">
