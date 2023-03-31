@@ -8,6 +8,8 @@ import { LoginComponent } from './component/login/login.component';
 import { MovimentiComponent } from './component/movimenti/movimenti.component';
 import { RegistrazioneComponent } from './component/registrazione/registrazione.component';
 import { AdminComponent } from './component/admin/admin.component';
+import { TransactionIbanComponent } from './component/movimenti/transaction-iban/transaction-iban.component';
+import { TransactionCardComponent } from './component/movimenti/transaction-card/transaction-card.component';
 
 
 const routes: Routes = [
@@ -18,8 +20,10 @@ const routes: Routes = [
   {path:'dati-utente', component:DatiUtenteComponent},
   {path: 'dati-bancari', component: DatiBancariComponent},
   {path:'movimenti', component:MovimentiComponent},
-  {path: 'bonifico', component:BonificoComponent},
-  {path: "", component:HomeComponent}
+  {path:'ibanTransaction', component:TransactionIbanComponent},
+  {path:'cardTransaction', component:TransactionCardComponent},
+  {path: 'bonifico', component:BonificoComponent}
+  
 
 ];
 
@@ -28,7 +32,7 @@ const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {
-
+  
 
 }
 

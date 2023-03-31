@@ -1,0 +1,118 @@
+.main-container {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flex-container-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-container {
+    width: 300px;
+    height: 200px;
+    background-color: black;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 17px 20px 5px 1px rgba(156,156,156,0.88);
+  }
+  
+  .fonts {
+    color: white;
+  }
+  
+  i {
+    font-size: 3vh;
+  }
+  
+  i.fa-joomla {
+    font-size: 8vh;
+  }
+  
+  i.fa-coins {
+    font-size: 8vh;
+  }
+  
+  .transaction {
+    font-size: 4vh;
+    margin-top: 30%;
+  }
+  
+  .property-card {
+    font-size: 80%;
+    color: gray;
+    margin-top: 60%;
+    margin-bottom: 30%;
+  }
+  
+  .margin-element {
+    margin: 7vw;
+  }
+  
+  .margin-items {
+    text-align: center;
+    margin-top: 4vw;
+  }
+  
+  .arrow  {
+    margin-left: 40px;
+  }
+  
+  table {
+    text-align: center;
+    margin-top: 10%;
+  }
+  
+  .budget {
+    text-align: center;
+  }
+  
+  .square {
+    position: relative;
+    left: 2vw;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+  
+  }
+  
+  .square h6 {
+    color: black;
+    font-size: 15px;
+  }
+  
+  .container-money-save {
+    width: 30vw;
+    height: 8vh;
+    background-color: black;
+    border-radius: 20px 0 0 20px;
+    color: white;
+    margin-left: 20%;
+  
+  }
+  
+  .container-description{
+    margin-left: 20%;
+  
+  }
+  
+  .save-money {
+    position: relative;
+    top: 8px;
+    font-size: 80%;
+    color: gray;
+  }
+  
+  .fa-arrow-right {
+    position: relative;
+    left: 10%;
+    bottom: 1vh;
+  }
+  
