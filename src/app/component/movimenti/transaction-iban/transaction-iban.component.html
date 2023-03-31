@@ -1,26 +1,31 @@
 <div class="flex-container-column margin-element">
+  <h1>Bank Account</h1>
+  <div>
+     <h2>{{infoBank.iban}}</h2>
+     <h4>budget € {{infoBank.ibanBalance}}</h4>
     
-    <div class="budget">
-      <i class="fa-solid fa-coins" style="color: #000000;"></i>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Importo</label>
-          <input type="number" class="form-control" id="amountIban" aria-describedby="emailHelp" placeholder="Inserisci importo" name="amountIban">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">IBAN</label>
-          <input type="text" class="form-control" id="ibanBeneficiary" placeholder="Iban destinatario" name="ibanBeneficiary">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary" onclick="enableProdMode();" >Invia</button>
+    
+  </div>
+  <div class="budget">
+    <i class="fa-solid fa-coins" style="color: #000000;"></i>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Transfers</label>
+        <input type="number" class="form-control" id="amountIban" aria-describedby="emailHelp"
+          placeholder="Insert Import" name="amountIban">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">IBAN</label>
+        <input type="text" class="form-control" id="ibanBeneficiary" placeholder="Iban Beneficiary"
+          name="ibanBeneficiary">
+      </div>
       <br>
-    
-      </form>
-      <h3>{{infoBank.ibanBalance}}</h3>
-      <h4>{{inputAmount}}</h4>  
-      <h4>budget</h4>
-    </div>
-    <div class="margin-items">
+      <button type="submit" class="btn btn-primary" onclick="enableProdMode();">Check Payment</button>
+      <br>
+    </form>
+
+  </div>
+  <!--div class="margin-items">
       <div class="flex-container">
         <h3 class="title">Transaction</h3>
         <span class="material-symbols-outlined arrow">trending_flat</span>
@@ -50,6 +55,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div-->
 
-  </div>
+</div>
