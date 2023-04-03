@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'registrazione',component:RegistrazioneComponent},
-  {path:'dati-utente', component:DatiUtenteComponent},
+  {path:'user-info', component:DatiUtenteComponent},
   {path:'dati-bancari', component: DatiBancariComponent},
   {path:'movimenti', component:MovimentiComponent},
   {path:'ibanTransaction', component:TransactionIbanComponent},

@@ -3,6 +3,7 @@ import {ClienteService} from "../../servizi/servizi-cliente/cliente.service";
 import {Router} from "@angular/router";
 import {DatiUtente} from "../../models/datiUtente";
 import {HttpClient} from "@angular/common/http";
+import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
 
 @Component({
   selector: 'app-dati-utente',
@@ -12,6 +13,7 @@ import {HttpClient} from "@angular/common/http";
 
 export class DatiUtenteComponent implements OnInit{
 
+  fiscalCode="svlgrl94a30z111l";
   myInfo : any;
   message = "Anagraphic User Data";
   valoreConto: string = ''
@@ -20,8 +22,8 @@ export class DatiUtenteComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.cliente.findUtenteById("test").subscribe(
-      (data: any) => {
+    this.cliente.findProprietarioById(this.fiscalCode).subscribe(
+      (data: AnagraficaCliente) => {
         this.myInfo= data;
         //debugger;  /*A video ti ferma sul questo punto per poi sganciarlo dall'ispezionatore del web*/
       }
