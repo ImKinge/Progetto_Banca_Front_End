@@ -4,13 +4,13 @@ import{Injectable} from '@angular/core';
     providedIn:'root'
 })
 export class AnagraficaCliente {
-    public codiceFiscale: any;
-    public nome = null;
-    public cognome = null;
-    public dataDiNascita = null;
-    public email = null;
-    public recapitoTelefonico = null;
-    public indirizzo = null;
+    public id: string="";
+    public name :string="";
+    public surname :string="";
+    public dateOfBirth: Date|undefined;
+    public email :string="";
+    public infoPhone :number=0;
+    public address :string="";
 
 
 }
