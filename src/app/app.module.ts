@@ -17,6 +17,7 @@ import { BonificoComponent } from './component/bonifico/bonifico.component';
 import { TransactionIbanComponent } from './component/movimenti/transaction-iban/transaction-iban.component';
 import { TransactionCardComponent } from './component/movimenti/transaction-card/transaction-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
