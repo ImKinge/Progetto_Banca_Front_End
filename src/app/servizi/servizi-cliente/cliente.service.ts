@@ -28,10 +28,10 @@ export class ClienteService {
     return this.http.delete(this.baseUrlCliente+'/delete/'+codiceFiscale);
   }
   findProprietarioById(codiceFiscale: any) {
-    return this.http.get(this.baseUrlCliente + '/find-proprietario/' + codiceFiscale);
+    return this.http.get<AnagraficaCliente>(this.baseUrlCliente + '/find-proprietario/' + codiceFiscale);
   }
   findUtenteById(codiceFiscale:any){
-    return this.http.get(this.baseUrlCliente+'/find-utente/'+codiceFiscale);
+    return this.http.get<DatiUtente>(this.baseUrlCliente+'/find-utente/'+codiceFiscale);
   }
   findDatiById(codiceFiscale:any){
     return this.http.get(this.baseUrlConto+'/bank-by-fiscalCode/'+codiceFiscale);

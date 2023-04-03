@@ -12,6 +12,14 @@ export class RegistrazioneComponent implements OnInit{
 
   clienti : any;
   message = "Anagraphic User Data";
+  registerClient:any;
+  inputName: string ="";
+  inputSurname:string="";
+  inputDate: Date|undefined;
+  inputAddress:string="";
+  inputFiscalCode:string="";
+  inputPhone:number=0;
+  inputEmail:string="";
 
   constructor(private cliente:ClienteService,private router:Router){};
 
@@ -22,6 +30,22 @@ export class RegistrazioneComponent implements OnInit{
         this.clienti = data[0];
       }
     );
+
+   
+
+  }
+  registration(){
+    this.registerClient={
+      "id":this.inputFiscalCode, 
+      "name":this.inputName,
+      "surname":this.inputSurname,
+      "dateOfBirth":this.inputDate,
+      "email":this.inputEmail,
+      "infoPhone":this.inputPhone,
+      "address":this.inputAddress}
+    this.cliente.saveCliente(this.registerClient).subscribe(
+      ()=>{        
+      });
   }
 
   // goToHome() {
