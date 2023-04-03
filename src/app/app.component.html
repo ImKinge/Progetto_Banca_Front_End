@@ -1,54 +1,86 @@
-<!--  Intestaione-->
-<div class="root-container">
-    <div class="navbar">
-      <div class="container-element">
-        <ul class="nav flex-column">
-          <li class="nav-title">
-            <h3>GlobalBank</h3>
-          </li>
-          <li class="nav-item">
-            <span class="material-icons">home</span>
-            <button type="submit" class="btn btn-dark" (click)="goToHome()"> Overview</button>
-          </li>
-          <li class="nav-item">
-            <span class="material-icons">person</span>
-            <button type="button" class="btn btn-dark"> Profile</button>
-          </li>
-          <li class="nav-item">
-            <span class="material-icons">wallet</span>
-            <button type="button" class="btn btn-dark" > Wallet</button>
-          </li>
-          <li class="nav-item">
-            <span class="material-icons">grid_view</span>
-            <button type="submit" class="btn btn-dark" > Reports</button>
-          </li>
-          <li class="nav-item">
-            <span class="material-icons">sync_alt</span>
-            <button type="submit" class="btn btn-dark" (click)="goToIban()"> Transfers</button>
-          </li>
-          <div class="container-logout">
+<!--Navbar Container-->
+<div class="flex-container-navbar">
+  <div class="flex-container-column-navbar navbar">
+    <div class="title-container">
+      <!--Title-->
+      <h3>GlobalBank</h3>
+    </div>
+
+    <!--Navigation-->
+    <div class="flex-container-navbar navigation">
+
+      <!--Column Icon-->
+      <div class="flex-container-column-navbar space">
+
+        <div class="flex-container-navbar">
+          <ul>
+            <li class="icon">
+              <span class="material-icons">home</span>
+            </li>
+            <li class="icon">
+              <span class="material-icons">person</span>
+            </li>
+            <li class="icon">
+              <span class="material-icons">wallet</span>
+            </li>
+            <li class="icon">
+              <span class="material-icons">grid_view</span>
+            </li>
+            <li class="icon">
+              <span class="material-icons">sync_alt</span>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-container-navbar container-logout">
+          <ul>
             <li class="nav-item logout">
               <span class="material-icons logout">logout</span>
-              <button type="button" class="btn logout btn-dark"> Log out</button>
             </li>
-          </div>
-        </ul>
+          </ul>
+        </div>
+
       </div>
+      <!--End Column Icon-->
+
+      <!--Column Button-->
+      <div class="flex-container-column-navbar space">
+
+        <div class="flex-container-navbar">
+          <ul class="ul-button">
+            <li class="button">
+              <button type="submit" class="btn btn-outline-dark" (click)="goToHome()"> Overview</button>
+            </li>
+            <li class="button">
+              <button type="button" class="btn btn-outline-dark"> Profile</button>
+            </li>
+            <li class="button">
+              <button type="button" class="btn btn-outline-dark" > Wallet</button>
+            </li>
+            <li class="button">
+              <button type="submit" class="btn btn-outline-dark" > Reports</button>
+            </li>
+            <li class="button">
+              <button type="submit" class="btn btn-outline-dark" (click)="goToIban()"> Transfers</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex-container-navbar container-logout">
+          <ul>
+            <li class="nav-item logout">
+              <button type="button" class="btn logout btn-outline-dark"> Log out</button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!--End Column Button-->
+
     </div>
+    <!-- End Navigation-->
+  </div>
   <div class="w-100">
-    <router-outlet></router-outlet> 
-    </div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
-<!--  
-    <app-transaction-iban></app-transaction-iban>
- 
-  
-  <mat-toolbar color="primary" class="navbar">-->
-<!--    <span>YOURBANK</span>-->
-<!--    <div>-->
-<!--      <span>Home</span>-->
-<!--      <span>About</span>-->
-<!--      <span>Service</span>-->
-<!--    </div>-->
-<!--  </mat-toolbar>-->

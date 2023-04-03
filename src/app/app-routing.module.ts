@@ -13,17 +13,18 @@ import { TransactionCardComponent } from './component/movimenti/transaction-card
 
 
 const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path:'admin', component:AdminComponent},
   {path:'home',component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'registrazione',component:RegistrazioneComponent},
   {path:'dati-utente', component:DatiUtenteComponent},
-  {path: 'dati-bancari', component: DatiBancariComponent},
+  {path:'dati-bancari', component: DatiBancariComponent},
   {path:'movimenti', component:MovimentiComponent},
   {path:'ibanTransaction', component:TransactionIbanComponent},
   {path:'cardTransaction', component:TransactionCardComponent},
-  {path: 'bonifico', component:BonificoComponent}
-  
+  {path:'bonifico', component:BonificoComponent}
+
 
 ];
 
@@ -32,7 +33,7 @@ const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {
-  
+
 
 }
 

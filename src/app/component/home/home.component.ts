@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   numberCard:number=9833123412341234;
   infoIban: MovimentoConto[]= [];
   infoCard: MovimentiCarta[] = [];
-  infoBank:any;
+  infoBank: any
   test : any;
   message = "WELCOME!";
 
