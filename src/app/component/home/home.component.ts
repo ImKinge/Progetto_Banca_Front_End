@@ -52,12 +52,4 @@ ngOnInit():void{
   //this.router.navigate(['dati-bancari']);
 }
 
-  goToLogin() {
-    this.router.navigate(["login"]);
-  }
-
-
-  goToRegistration() {
-    this.router.navigate(["registrazione"]);
-  }
 }

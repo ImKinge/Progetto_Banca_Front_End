@@ -24,10 +24,11 @@ export class RegistrazioneComponent implements OnInit{
     );
   }
 
-  goToDatiUtenti() {
-    this.router.navigate(["dati-utente"]);
+  goToHome() {
+    this.router.navigate(["home"]);
   }
 
-
-
+  goToLogin() {
+    this.router.navigate(["login"]);
+  }
 }

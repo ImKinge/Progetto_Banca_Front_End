@@ -1,23 +1,46 @@
-  <div class="container">
-    <div class="card-style">
-      <div class="form-box">
-        <h2>Enter your data</h2>
-        <form action="#">
-          <div class="input-box">
-            <input type="email" required>
-            <label>Codice Titolare</label>
+<div class="container">
+  <div class="myCard">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="myLeftCtn">
+          <form class="myForm text-center">
+            <header>Enter your dashboard</header>
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input class="myInput" type="text" placeholder="Enter a valid pin" id="pin" required>
+            </div>
+
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input class="myInput" placeholder="Your User Code" type="text" id="userCode" required>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input id="check_1" name="check_1"  type="checkbox" required><small> I read and agree to Terms & Conditions</small>
+                <div class="invalid-feedback">You must check the box.</div>
+              </label>
+            </div>
+
+            <input type="submit" class="butt" (click)="goToHome()" value="LOGIN">
+
+            <input type="submit" class="butt" (click)="goToRegistration()" value="OR REGISTER NOW ">
+
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="myRightCtn">
+          <div class="box"><header>Welcome to Global Bank!</header>
+
+            <p>A bank accessible to all.<br>
+              Secure payments and instant transfers!<br>
+              Join the community!.</p>
+            <input type="button" class="butt_out" value="Learn More"/>
           </div>
-          <div class="input-box">
-            <input type="password" required>
-            <label>Codice Pin </label>
-          </div>
-          <div>
-<!--            <button (click) = goToDatiUtenti() type="submit" class="btn">Login</button>-->
-          </div>
-          <div class="login-register">
-<!--            <p>Don't have an account?<button (click) = "goToRegistration()"class="registration-link">Register</button></p>-->
-          </div>
-        </form>
+
+        </div>
       </div>
     </div>
   </div>
+</div>
