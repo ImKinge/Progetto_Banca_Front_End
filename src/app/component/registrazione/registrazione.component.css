@@ -1,117 +1,95 @@
+.container {
+  height: 100%;
+  justify-content: space-around;
+  padding: 0;
+}
 
+.card-container {
+  height: 35rem;
+  justify-content: center;
+  background-image: linear-gradient(45deg, #606060 0%, #dadada 100%);
+  border-radius: 20px;
+  border: none;
+  -webkit-box-shadow: 21px 25px 34px -3px rgba(0,0,0,0.62);
+  -moz-box-shadow: 21px 25px 34px -3px rgba(0,0,0,0.62);
+  box-shadow: 21px 25px 34px -3px rgba(0,0,0,0.62);
+}
 
+.flex-container {
+  display: flex;
+  align-items: center;
+}
 
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
 
+div.row {
+  text-align: center;
+}
 
+h3 {
+  margin-bottom: 20px;
+}
 
-/** {*/
-/*  margin: 0;*/
-/*  padding : 0;*/
-/*  box-sizing: border-box;*/
-/*  font-family: 'Poppins', sans-serif;*/
-/*}*/
+div.col {
+  align-items: center;
+}
 
-/*body {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  min-height: 100vh;*/
-/*  background-size: cover;*/
-/*  background-position: center;*/
-/*}*/
-/*.container {*/
-/*  display: flex;*/
-/*  width: 400px;*/
-/*  height: calc(100vh - 64px);*/
-/*  position: relative;*/
-/*  margin: auto;*/
-/*  flex-direction: column;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*}*/
+.myInput {
+  width: 230px;
+  border-radius: 25px;
+  padding: 10px;
+  padding-left: 50px;
+  border: none;
+  -webkit-box-shadow: 0px 30px 9px -11px rgba(0,0,0,0.62);
+  -moz-box-shadow: 0px 30px 9px -11px rgba(0,0,0,0.62);
+  box-shadow: 0px 30px 9px -11px rgba(0,0,0,0.62);
+}
 
+.form-group {
+  margin-top: 30px;
+}
 
-/*!*CSS del form di login*!*/
-/*.card-style {*/
-/*  position: relative;*/
-/*  width: 600px;*/
-/*  height: 600px;*/
-/*  background: transparent;*/
-/*  border: 2px solid black;*/
-/*  border-radius: 20px;*/
-/*  backdrop-filter: blur(10px); !*Rende il background del contenitore sfocato in base ai px*!*/
-/*  box-shadow: 0 0 30px rgba(0, 0, 0, .5); !*Crea un effetto ombra sotto al container*!*/
-/*  display: flex;*/
-/*  justify-content: center; !*Dispone gli elementi nella parte superiore centrale del contenitore*!*/
-/*  align-items: center; !*Dispone al centro del contenitore gli elementi*!*/
-/*}*/
+.myInput:focus {
+  outline: none;
+}
 
-/*.card-style .form-box {*/
-/*  width: 100%;*/
-/*  padding: 40px;*/
-/*  margin-bottom: 20px;*/
-/*  align-items: center;*/
-/*}*/
+.butt {
+  margin-top: 30px;
+  background-image: linear-gradient(45deg, #FAD961 0%, #F76B1C 100%);
+  color: black;
+  width: 230px;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-box-shadow: 0px 20px 9px -11px rgba(0,0,0,0.62);
+  -moz-box-shadow: 0px 20px 9px -11px rgba(0,0,0,0.62);
+  box-shadow: 0px 20px 9px -11px rgba(0,0,0,0.62);
+}
 
-/*.form-box h2 {*/
-/*  width: 100%;*/
-/*  position: relative;*/
-/*  font-size: 2em;*/
-/*  color: black;*/
-/*  text-align: center;*/
-/*}*/
+.butt:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
 
-/*.block-line {*/
-/*  display: inline-block;*/
-/*  width: 50%;*/
-/*}*/
+.butt:focus {
+  outline: none;
+}
 
-/*.input-box {*/
-/*  position: relative;*/
-/*  width: 50%;*/
-/*  height: 50px;*/
-/*  border-bottom: 2px solid black;*/
-/*  margin: 30px 25%;*/
-/*}*/
-
-/*.input-box label {*/
-/*  position: absolute;*/
-/*  top:50%;*/
-/*  left: 1px;*/
-/*  transform: translateY(-50%);*/
-/*  font-size: 1em;*/
-/*  color: black;*/
-/*  pointer-events: none;*/
-/*  transition: .5s;*/
-/*}*/
-
-/*.input-box input:focus~label,*/
-/*.input-box input:valid~label {*/
-/*  top: -5px;*/
-/*}*/
-
-/*.input-box input {*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  background: transparent;*/
-/*  border: none;*/
-/*  outline: none;*/
-
-/*}*/
-
-/*.btn {*/
-/*  width: 100%;*/
-/*  height: 40px;*/
-/*  background: black;*/
-/*  border: none;*/
-/*  border-radius: 6px;*/
-/*  cursor: pointer;*/
-/*  outline: none;*/
-/*  font-size: 1em;*/
-/*  color: white;*/
-/*  font-weight: 700; !*Permette di impostare l'aspetto dello spessore di un testo*!*/
-/*  margin-top: 20px;*/
-/*}*/
-
+.fas {
+  position: relative;
+  color: #F76B1C;
+  left: 36px;
+}
 
 

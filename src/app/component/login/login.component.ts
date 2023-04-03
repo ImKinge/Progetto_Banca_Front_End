@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
 import { DatiUtente } from 'src/app/models/datiUtente';
-import {Router} from "@angular/router";
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,8 @@ export class LoginComponent {
 
 
   info:any;
-  constructor(private service:ClienteService,private utente:DatiUtente)  {};
+
+  constructor(private service:ClienteService,private utente:DatiUtente, private router:Router)  {};
 
   ngOnInit():void{
 
@@ -21,17 +22,20 @@ export class LoginComponent {
       this.info=data;
     });
   }
-}
-/*
-  constructor( private router:Router){};
 
   goToRegistration() {
     this.router.navigate(["registrazione"]);
   }
 
-  goToDatiUtenti() {
-    this.router.navigate(["dati-utente"]);
+  goToHome() {
+    this.router.navigate(["home"]);
   }
-  */
+
+}
+
+
+
+
+
 
 
