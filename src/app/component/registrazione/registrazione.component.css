@@ -4,10 +4,10 @@
   padding: 0;
 }
 
-.card-container {
+.card.card-container-registration {
   height: 35rem;
   justify-content: center;
-  background-image: linear-gradient(45deg, #606060 0%, #dadada 100%);
+  background-image: linear-gradient(145deg, #0093E9 0%, #d7fdf8 100%);
   border-radius: 20px;
   border: none;
   -webkit-box-shadow: 21px 25px 34px -3px rgba(0,0,0,0.62);
@@ -58,8 +58,8 @@ div.col {
 
 .butt {
   margin-top: 30px;
-  background-image: linear-gradient(45deg, #FAD961 0%, #F76B1C 100%);
-  color: black;
+  background-image: linear-gradient(145deg, #000000 0%, #c5c5c5 100%);
+  color: white;
   width: 230px;
   border: none;
   border-radius: 25px;
@@ -79,7 +79,7 @@ div.col {
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+  box-shadow: 0 4px 15px 0 #000000;
 }
 
 .butt:focus {
@@ -88,7 +88,7 @@ div.col {
 
 .fas {
   position: relative;
-  color: #F76B1C;
+  color: #0093E9;
   left: 36px;
 }
 

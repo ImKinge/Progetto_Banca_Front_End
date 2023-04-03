@@ -24,8 +24,12 @@ export class RegistrazioneComponent implements OnInit{
     );
   }
 
-  goToHome() {
-    this.router.navigate(["home"]);
+  // goToHome() {
+  //   this.router.navigate(["home"]);
+  // }
+
+  goToSetPin() {
+    this.router.navigate(["set-pin"]);
   }
 
   goToLogin() {

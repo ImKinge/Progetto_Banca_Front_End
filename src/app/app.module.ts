@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BonificoComponent } from './component/bonifico/bonifico.component';
 import { TransactionIbanComponent } from './component/movimenti/transaction-iban/transaction-iban.component';
 import { TransactionCardComponent } from './component/movimenti/transaction-card/transaction-card.component';
+import { SetPinComponent } from './component/set-pin/set-pin.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { TransactionCardComponent } from './component/movimenti/transaction-card
     BonificoComponent,
     TransactionIbanComponent,
     TransactionCardComponent,
+    SetPinComponent,
   ],
   imports: [
     BrowserModule,

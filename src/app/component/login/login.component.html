@@ -6,12 +6,12 @@
           <form class="myForm text-center">
             <header>Enter your dashboard</header>
             <div class="form-group">
-              <i class="fas fa-user"></i>
+              <i class="fa fa-user"></i>
               <input class="myInput" type="text" placeholder="Enter a valid pin" id="pin" required>
             </div>
 
             <div class="form-group">
-              <i class="fas fa-envelope"></i>
+              <i class="fa fa-envelope"></i>
               <input class="myInput" placeholder="Your User Code" type="text" id="userCode" required>
             </div>
 
@@ -22,10 +22,10 @@
               </label>
             </div>
 
-            <input type="submit" class="butt" (click)="goToHome()" value="LOGIN">
-
-            <input type="submit" class="butt" (click)="goToRegistration()" value="OR REGISTER NOW ">
-
+            <div class="form-group">
+              <input type="submit" class="butt" (click)="goToHome()" value="LOGIN">
+              <input type="submit" class="butt" (click)="goToRegistration()" value="OR REGISTER NOW ">
+            </div>
           </form>
         </div>
       </div>
