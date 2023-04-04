@@ -10,10 +10,11 @@ import { RegistrazioneComponent } from './component/registrazione/registrazione.
 import { AdminComponent } from './component/admin/admin.component';
 import { TransactionIbanComponent } from './component/movimenti/transaction-iban/transaction-iban.component';
 import { TransactionCardComponent } from './component/movimenti/transaction-card/transaction-card.component';
+import {SetPinComponent} from "./component/set-pin/set-pin.component";
 
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path:'admin', component:AdminComponent},
   {path:'home',component:HomeComponent},
   {path:'login', component:LoginComponent},
@@ -23,9 +24,7 @@ const routes: Routes = [
   {path:'movimenti', component:MovimentiComponent},
   {path:'ibanTransaction', component:TransactionIbanComponent},
   {path:'cardTransaction', component:TransactionCardComponent},
-  {path:'bonifico', component:BonificoComponent}
-
-
+  {path:'set-pin', component:SetPinComponent}
 ];
 
 @NgModule({

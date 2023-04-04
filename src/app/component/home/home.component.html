@@ -48,13 +48,14 @@
 
   <!--Seconda colonna -->
   <div class="flex-container-column margin-element-column2">
+
     <div class="budget">
       <i class="fa-solid fa-coins top-element" style="color: #000000;"></i>
       <h2>{{infoBank.iban}}</h2>
       <h3>€: {{infoBank.ibanBalance}}</h3>
-
       <h4>budget</h4>
     </div>
+
     <div class="margin-items">
       <div class="flex-container">
         <h3 class="title">Transaction</h3>
@@ -71,13 +72,7 @@
             </div>
             <th class="description" scope="col">
               <p>{{info.descriptionTransactional}}</p>
-              <ng-template *ngIf="info.amountIban < 0; then bloccoIf else bloccoElse"></ng-template>
-                <ng-template #bloccoIf>
-                  <p class="import-label-negative">€ {{info.amountIban}}</p>
-                </ng-template>
-                <ng-template #bloccoElse>
-                  <p class="import-label-positive">€ {{info.amountIban}}</p>
-                </ng-template>
+              <p [ngClass]="info.amountIban < 0 ? 'import-label-negative' : 'import-label-positive'">€ {{info.amountIban}}</p>
             </th>
           </tr>
         </div>

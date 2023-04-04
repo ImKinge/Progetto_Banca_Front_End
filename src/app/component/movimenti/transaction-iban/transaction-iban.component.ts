@@ -2,9 +2,8 @@ import { Component, OnInit, AfterContentInit, ViewEncapsulation } from '@angular
 import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
 import { MovimentoConto } from 'src/app/models/movimentiConto';
 import { DatiBancari } from 'src/app/models/datiBancari';
-import { NumberFormatStyle, getLocaleDateFormat } from '@angular/common';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-transaction-iban',
   templateUrl: './transaction-iban.component.html',
@@ -21,13 +20,14 @@ export class TransactionIbanComponent {
   infoBeneficiary: any;
 
 
-  inputAmountIban  :number=0;
-  inputIbanBeneficiary :string="";
-  inputDescription  :string="";
-  transferPayment:any;
+  inputAmountIban :number = 0;
+  inputIbanBeneficiary :string = "";
+  inputDescription :string = "";
+  transferPayment :any;
+
   constructor(private service: ClienteService, private router:Router) { };
 
-  now= new Date;
+  now = new Date;
 
   ngOnInit(): void {
     this.service.findIbanTransactionByIban(this.iban).subscribe(

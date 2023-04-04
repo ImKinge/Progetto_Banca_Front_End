@@ -1,63 +1,33 @@
-<div class="flex-container-column margin-element">
+<div class="flex-contain-column padding-element">
   <h1>Bank Account</h1>
+
   <div>
      <h2>{{iban}}</h2>
      <h4>budget € {{infoBank.ibanBalance}}</h4>
-    
-    
   </div>
+
   <div class="budget">
     <i class="fa-solid fa-coins" style="color: #000000;"></i>
     <form>
+
       <div class="form-group">
         <label for="exampleInputEmail1">Transfers</label>
         <input [(ngModel)]="inputAmountIban" type="double" class="form-control" name="inputAmountIban" placeholder="Insert Import" >
       </div>
+
       <div class="form-group">
         <label for="exampleInputPassword1">IBAN</label>
         <input [(ngModel)]="inputIbanBeneficiary" type="text" class="form-control" name="inputIbanBeneficiary" placeholder="Iban Beneficiary">
       </div>
+
       <div class="form-group">
         <label for="exampleInputPassword1">Reason for the transfer</label>
-        <input [(ngModel)]="inputDescription" type="text" class="form-control" name="inputDescription" placeholder="descriptionTransactional">
+        <input [(ngModel)]="inputDescription" type="text" class="form-control" name="inputDescription" placeholder="Description transactional">
       </div>
-      
+
       <br>
       <button type="button" class="btn btn-primary" (click)="validateTransfer()">Check Payment</button>
       <br>
     </form>
-
   </div>
-  <!--div class="margin-items">
-      <div class="flex-container">
-        <h3 class="title">Transaction</h3>
-        <span class="material-symbols-outlined arrow">trending_flat</span>
-      </div>
-      <table class="table table-borderless">
-        
-        <tbody><ol *ngFor="let info of infoIban">
-          <tr>
-            <th scope="col">{{info.descriptionTransactional}} </th>
-            <th scope="col">€ {{info.amountIban}}</th>
-          </tr>
-          
-          </ol>
-        </tbody>
-    
-      </table>
-      <div class="margin-items">
-        <div class="flex-container">
-          <div class="flex-container container-money-save">
-            <div class="square">
-              <h6><strong>75%</strong></h6>
-            </div>
-            <div class="container-description">
-              <h5 class="save-money">You save money</h5>
-              <h3>30.09.2020 <i class="fa-solid fa-arrow-right" style="color: white;"></i></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div-->
-
 </div>
