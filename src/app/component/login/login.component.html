@@ -5,14 +5,16 @@
         <div class="myLeftCtn">
           <form class="myForm text-center">
             <header>Enter your dashboard</header>
+           
+
             <div class="form-group">
               <i class="fas fa-user"></i>
-              <input class="myInput" type="text" placeholder="Enter a valid pin" id="pin" required>
+              <input [(ngModel)]="inputUserCode" class="myInput" name="inputUserCode" placeholder="Your User Code" type="number" id="userCode" required>
             </div>
 
             <div class="form-group">
-              <i class="fas fa-envelope"></i>
-              <input class="myInput" placeholder="Your User Code" type="text" id="userCode" required>
+              
+              <input [(ngModel)]="inputPin" class="myInput" type="number" name="inputPin" placeholder="Enter a valid pin" id="pin" required>
             </div>
 
             <div class="form-group">

@@ -30,8 +30,8 @@ export class ClienteService {
   findProprietarioById(codiceFiscale: any) {
     return this.http.get<AnagraficaCliente>(this.baseUrlCliente + '/find-proprietario/' + codiceFiscale);
   }
-  findUtenteById(codiceFiscale:any){
-    return this.http.get<DatiUtente>(this.baseUrlCliente+'/find-utente/'+codiceFiscale);
+  findUtenteById(userCode:number){
+    return this.http.get<DatiUtente>(this.baseUrlCliente+'/find-user/'+userCode);
   }
   findDatiById(codiceFiscale:any){
     return this.http.get(this.baseUrlConto+'/bank-by-fiscalCode/'+codiceFiscale);
