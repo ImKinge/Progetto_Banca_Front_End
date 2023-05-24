@@ -5,16 +5,16 @@
         <div class="myLeftCtn">
           <form class="myForm text-center">
             <header>Enter your dashboard</header>
-           
+
 
             <div class="form-group">
               <i class="fas fa-user"></i>
-              <input [(ngModel)]="inputUserCode" class="myInput" name="inputUserCode" placeholder="Your User Code" type="number" id="userCode" required>
+              <input [(ngModel)]="inputUsername" class="myInput" type="text" name="inputUsername" placeholder="Your Username"  id="username" required>
             </div>
 
             <div class="form-group">
-              
-              <input [(ngModel)]="inputPin" class="myInput" type="number" name="inputPin" placeholder="Enter a valid pin" id="pin" required>
+              <i class="fas fa-user"></i>
+              <input [(ngModel)]="inputPassword" class="myInput" type="text" name="inputPassword" placeholder="Password" id="password" required>
             </div>
 
             <div class="form-group">
@@ -25,8 +25,8 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" class="butt" (click)="goToHome()" value="LOGIN">
-              <input type="submit" class="butt" (click)="goToRegistration()" value="OR REGISTER NOW ">
+              <input type="submit" class="butt" (click)="authenticate()" value="LOGIN">
+              <input type="submit" class="butt" (click)="goToRegistration()" value="OR REGISTER NOW">
             </div>
           </form>
         </div>

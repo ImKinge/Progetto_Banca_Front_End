@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterContentInit, ViewEncapsulation } from '@angular/core';
-import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
+import { RegisterRequest } from 'src/app/models/registerRequest';
 import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
-import { DatiUtente } from 'src/app/models/datiUtente';
-import { DatiBancari } from 'src/app/models/datiBancari';
+import { CustomerData } from 'src/app/models/customerData';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -18,21 +18,21 @@ export class AdminComponent {
   infoBanca: any;
   codiceFiscale:any;
 
-  constructor(private servizi: ClienteService, private cliente: AnagraficaCliente, private utente: DatiUtente, private dBanca: DatiBancari) { };
+  constructor(private servizi: ClienteService, private cliente: RegisterRequest) { };
 
   ngOnInit(): void {
   }
 
   ngAfterContentInit() {
-    this.servizi.findAllClienti().subscribe(
-      (data: AnagraficaCliente[]) => {
-        this.infoClienti = data;
-      }
-    );
+    // this.servizi.findAllClienti().subscribe(
+    //   (data: RegisterRequest[]) => {
+    //     this.infoClienti = data;
+    //   }
+    // );
 
-    this.servizi.findAllUtenti().subscribe((data: DatiUtente[]) => {
-      this.infoUtenti = data;
-    });
+    // this.servizi.findAllUtenti().subscribe((data: DatiUtente[]) => {
+    //   this.infoUtenti = data;
+    // });
     // this.servizi.findAllDatiBancari().subscribe((data: DatiBancari[]) => {
     //   this.infoBanca = data;
     // });

@@ -9,7 +9,7 @@
       <div class="flex-container-column fonts first-column">
         <img src="assets/img/visa.png" style="width: 70px">
         <img class="chip" src="assets/img/chip.png" style="width: 40px">
-        <h5 class="property-card">{{infoBank.creditCard}}</h5>
+        <h5 class="property-card">{{card.cardNumber}}</h5>
       </div>
       <div class="flex-container-column">
         <img class="logo-global" src="assets/img/global.png" style="width: 90px">
@@ -17,32 +17,37 @@
     </div>
     <!-- End Card container-->
 
+    <!-- Container Card Transaction -->
     <div class="margin-items">
-      <h3>€: {{infoBank.cardBalance}}</h3>
-      <div class="flex-container">
+      <h3>€: {{card.balance}}</h3>
+      <div class="flex-container container-title">
         <h3 class="title">Card transaction</h3>
         <span class="material-symbols-outlined arrow">trending_flat</span>
       </div>
       <div class="flex-container table-container">
         <table class="table table-borderless">
           <tbody>
-            <div *ngFor="let info of infoCard">
+            <div class="box-table" *ngFor="let info of infoCard">
               <tr>
-                <div class="flex-container square color-spotify-xbox">
+                <div class="flex-container square color-shop-box">
                   <th>
-                    <i class="fa-brands fa-spotify" style="color: #000000;"></i>
+                    <i class="fa-sharp fa-solid fa-cart-shopping" style="color: #000000;"></i>
                   </th>
                 </div>
-                <th class="description" scope="col">
-                  <p>{{info.descriptionTransaction}}</p>
-                  <p class="import-label-negative">€ -{{info.amountCard}}</p>
-                </th>
+                  <th class="description" scope="col">
+                    <div class="">
+                      <p>{{info.descriptionTransaction}}</p>
+                      <p class="date-transaction">{{info.dateTransaction | date: 'dd.MM.yyyy HH:mm:ss'}}</p>
+                      <p class="import-label-negative">€ {{info.amount}}</p>
+                    </div>
+                  </th>
               </tr>
             </div>
           </tbody>
         </table>
       </div>
     </div>
+    <!-- End Container Card Transaction-->
 
   </div>
 
@@ -51,28 +56,29 @@
 
     <div class="budget">
       <i class="fa-solid fa-coins top-element" style="color: #000000;"></i>
-      <h2>{{infoBank.iban}}</h2>
-      <h3>€: {{infoBank.ibanBalance}}</h3>
+      <h2>{{currentAccount.ibanNumber}}</h2>
+      <h3>€: {{currentAccount.balance}}</h3>
       <h4>budget</h4>
     </div>
 
     <div class="margin-items">
-      <div class="flex-container">
+      <div class="flex-container container-title">
         <h3 class="title">Transaction</h3>
         <span class="material-symbols-outlined arrow">trending_flat</span>
       </div>
       <table class="table table-borderless">
         <tbody>
-        <div *ngFor="let info of infoIban">
+        <div class="box-table" *ngFor="let info of infoIban">
           <tr>
-            <div class="flex-container square color-spotify-xbox">
+            <div class="flex-container square color-shop-box">
               <th>
-                <i class="fa-brands fa-spotify" style="color: #000000;"></i>
+                <i class="fa-sharp fa-solid fa-cart-shopping" style="color: #000000;"></i>
               </th>
             </div>
             <th class="description" scope="col">
-              <p>{{info.descriptionTransactional}}</p>
-              <p [ngClass]="info.amountIban < 0 ? 'import-label-negative' : 'import-label-positive'">€ {{info.amountIban}}</p>
+              <p>{{info.descriptionTransaction}}</p>
+              <p class="date-transaction">{{info.dateTransaction | date: 'dd.MM.yyyy'}}</p>
+              <p [ngClass]="info.amount.includes('-') ? 'import-label-negative' : 'import-label-positive'">€ {{info.amount}}</p>
             </th>
           </tr>
         </div>

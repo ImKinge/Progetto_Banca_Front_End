@@ -1,8 +1,11 @@
-import { Component, OnInit, AfterContentInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
-import { MovimentoConto } from 'src/app/models/movimentiConto';
-import { DatiBancari } from 'src/app/models/datiBancari';
 import { Router } from '@angular/router';
+import { CurrentAccount} from "../../../models/currentAccount";
+import { ResponseModel } from "../../../models/responseModel";
+import { MatDialog } from "@angular/material/dialog";
+import { ErrorComponent} from "../../error/error.component";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-transaction-iban',
@@ -11,54 +14,54 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 
 })
-export class TransactionIbanComponent {
+export class TransactionIbanComponent implements OnInit {
 
-
-  iban = "IT7894561221654987789456123";
-  infoIban: any;
-  infoBank: any;
-  infoBeneficiary: any;
-
+  currentAccount: CurrentAccount = new CurrentAccount()
 
   inputAmountIban :number = 0;
   inputIbanBeneficiary :string = "";
   inputDescription :string = "";
+  inputName : string = "";
+  inputSurname : string = "";
+  inputDate = new FormControl('');
   transferPayment :any;
 
-  constructor(private service: ClienteService, private router:Router) { };
+  constructor(private service: ClienteService, private router:Router, private matDialog : MatDialog) { };
 
-  now = new Date;
 
   ngOnInit(): void {
-    this.service.findIbanTransactionByIban(this.iban).subscribe(
-      (data: MovimentoConto[]) => {
-        this.infoIban = data;
-      });
-
-    this.service.findInfoBankByIban(this.iban).subscribe(
-      (data: DatiBancari) => {
-        this.infoBank = data;
+    this.service.findCurrentAccountByFiscalCode().subscribe(
+      (data: ResponseModel) => {
+        this.currentAccount = data.responseBody as CurrentAccount;
       })
 
   }
+
   validateTransfer() {
-     this.service.findInfoBankByIban(this.inputIbanBeneficiary).subscribe(
-      (data: DatiBancari) => { this.infoBeneficiary = data
-        this.transferPayment=  {"iban" : this.infoBank.iban,
-        "amountIban" : this.inputAmountIban,
-        "descriptionTransactional" : this.inputDescription,
-        "fiscalCode" : this.infoBank.fiscalCode,
-        "ibanBeneficiary" : this.inputIbanBeneficiary,
-        "fiscalCodeBeneficiary": this.infoBeneficiary.fiscalCode,
-        "date": this.now};
-
-        this.service.transfers(this.transferPayment).subscribe(() => {});
-        this.router.navigate(["home"]);
-      });
-
+        this.transferPayment = {
+          "amount" : this.inputAmountIban,
+          "description": this.inputDescription,
+          "ibanBeneficiary": this.inputIbanBeneficiary,
+          "name" : this.inputName,
+          "surname" : this.inputSurname,
+          "dateTransaction" : this.inputDate.value
+        }
+        this.service.makeTransfer(this.transferPayment)
+          .subscribe((data: any) => {
+            this.openDialogSuccess()
+        },error => {
+            console.log(error);
+             //alert(error.error.responseBody);
+            this.openDialogError(error.error.responseBody)
+           });
   }
 
+  openDialogError (messaggio: string) {
+    this.matDialog.open(ErrorComponent, {data: {title: 'Error!', messaggio: messaggio, vaiHome: false}});
+  }
 
-
+  openDialogSuccess() {
+    this.matDialog.open(ErrorComponent, {data: {title: 'Success!', messaggio: 'Success transfer', vaiHome: true}});
+  }
 
 }

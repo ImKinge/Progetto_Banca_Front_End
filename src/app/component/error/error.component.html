@@ -1,0 +1,5 @@
+<h1>{{data.title}}</h1>
+<p>{{data.messaggio}}</p>
+<button type="button" class="btn logout btn-outline-dark" *ngIf="data.vaiHome" (click)="vaiHome()">Go to home</button>
+<button type="button" class="btn logout btn-outline-dark" *ngIf="!data.vaiHome" (click)="onNoClick()">Close</button>
+

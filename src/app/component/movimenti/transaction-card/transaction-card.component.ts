@@ -11,28 +11,28 @@ import{ClienteService} from 'src/app/servizi/servizi-cliente/cliente.service';
 export class TransactionCardComponent {
 
   infoCard:any;
-  
+
   numberCard:number = 9833123412341234;
   constructor(private transaction:MovimentiCarta, private service: ClienteService){};
-  
-  
+
+
 
   ngOnInit():void{
-    
-    this.service.findCardTransactionsByCard(this.numberCard).subscribe(
-      (data:MovimentiCarta[])=>{
-      this.infoCard=data;
-    }); 
 
-    
+    // this.service.findCardTransactionsByCard(this.numberCard).subscribe(
+    //   (data:MovimentiCarta[])=>{
+    //   this.infoCard=data;
+    // });
+
+
     /*this.service.findAllInfoBanks().subscribe((data:)) */
   }
   ngAfterContentInit():void{
 
 
-    this.service.payments(this.infoCard).subscribe(()=>{
-      this.infoCard;
-    });
+    // this.service.payments(this.infoCard).subscribe(()=>{
+    //   this.infoCard;
+    // });
   }
 
 }

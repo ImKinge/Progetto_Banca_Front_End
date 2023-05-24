@@ -8,9 +8,10 @@ body {
 }
 .container {
   max-width: 800px;
-  height: 500px;
+  height: 100vh;
   margin: auto;
-  margin-top: 12%;
+  display: flex;
+  align-items: center;
 }
 .myRightCtn {
   position: relative;
@@ -49,7 +50,6 @@ body {
   display: flex;
   position: relative;
   background: #fff;
-  height: 100%;
   border-radius: 25px;
   -webkit-box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.62);
   -moz-box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.62);
@@ -81,6 +81,7 @@ body {
 .myLeftCtn .myInput:focus {
   outline: none;
 }
+
 
 .myForm {
   position: relative;
@@ -120,7 +121,7 @@ div.form-group {
   outline: none;
 }
 
-.myLeftCtn .fa {
+.myLeftCtn .fas {
   position: relative;
   color: #0093E9;
   left: 36px;

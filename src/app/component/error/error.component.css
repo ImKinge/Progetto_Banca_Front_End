@@ -1,0 +1,5 @@
+/* /deep/ ---> Questa istruzione serve a sovrascrivere il css di angular di default*/
+/deep/.mat-mdc-dialog-surface.mdc-dialog__surface{
+  background-color: white;
+  padding: 50px;
+}

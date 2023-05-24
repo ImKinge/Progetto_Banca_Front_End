@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ClienteService} from "../../servizi/servizi-cliente/cliente.service";
-import {Router} from "@angular/router";
-import {DatiUtente} from "../../models/datiUtente";
-import {HttpClient} from "@angular/common/http";
-import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
+import { Component, OnInit} from '@angular/core';
+import { ClienteService} from "../../servizi/servizi-cliente/cliente.service";
+import { Router} from "@angular/router";
+import { HttpClient} from "@angular/common/http";
+import { RegisterRequest } from 'src/app/models/registerRequest';
 
 @Component({
   selector: 'app-dati-utente',
@@ -22,12 +21,12 @@ export class DatiUtenteComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.cliente.findProprietarioById(this.fiscalCode).subscribe(
-      (data: AnagraficaCliente) => {
-        this.myInfo= data;
-        //debugger;  /*A video ti ferma sul questo punto per poi sganciarlo dall'ispezionatore del web*/
-      }
-    );
+    // this.cliente.findProprietarioById(this.fiscalCode).subscribe(
+    //   (data: RegisterRequest) => {
+    //     this.myInfo= data;
+    //     //debugger;  /*A video ti ferma sul questo punto per poi sganciarlo dall'ispezionatore del web*/
+    //   }
+    // );
   }
 
   goToBonifico() {

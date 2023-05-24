@@ -1,10 +1,12 @@
-import { Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import { ClienteService } from 'src/app/servizi/servizi-cliente/cliente.service';
-import { AnagraficaCliente } from 'src/app/models/anagraficaCliente';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ClienteService} from 'src/app/servizi/servizi-cliente/cliente.service';
 import {Router} from '@angular/router';
-import { MovimentoConto } from 'src/app/models/movimentiConto';
-import { DatiBancari } from 'src/app/models/datiBancari';
-import { MovimentiCarta } from 'src/app/models/movimentiCarta';
+import {ResponseModel} from "../../models/responseModel";
+import {MovimentoConto} from "../../models/movimentiConto";
+import {CurrentAccount} from "../../models/currentAccount";
+import {MovimentiCarta} from "../../models/movimentiCarta";
+import {Card} from "../../models/card";
+
 
 @Component({
   selector: 'app-home',
@@ -14,42 +16,41 @@ import { MovimentiCarta } from 'src/app/models/movimentiCarta';
 })
 export class HomeComponent implements OnInit {
 
-  iban:string="IT7894561221654987789456123";
-  numberCard:number=9833123412341234;
-  infoIban: MovimentoConto[]= [];
+  numberCard: string = "98i09748962926";
+  infoIban: MovimentoConto[] = [];
   infoCard: MovimentiCarta[] = [];
-  infoBank: any
-  test : any;
-  message = "WELCOME!";
+  currentAccount: CurrentAccount = new CurrentAccount();
+  card : Card = new Card();
 
 
-  constructor( private router:Router, private service:ClienteService){};
+  constructor(private router: Router, private service: ClienteService) {
+  };
 
-ngOnInit():void{
+  ngOnInit(): void {
 
-  this.service.findIbanTransactionByIban(this.iban).subscribe(
-    (data:MovimentoConto[])=>{
-      this.infoIban=data;
-    });
+    this.service.getIbanTransaction().subscribe(
+      //Perchè su back-end torna una responseEntity e quindi dobbiamo cambiare anche da front-end il ritorno della risposta
+      (data: ResponseModel) => {
+        //il responseBody dovrà avere sempre un modello come il contenuto di responseBody stesso
+        this.infoIban = data.responseBody as MovimentoConto[];
+      });
 
-  this.service.findInfoBankByIban(this.iban).subscribe(
-    (data:DatiBancari)=>{
-        this.infoBank=data;
-    })
+    this.service.findCurrentAccountByFiscalCode().subscribe(
+      (data: ResponseModel) => {
+        this.currentAccount = data.responseBody as CurrentAccount;
+      })
 
-    this.service.findCardTransactionsByCard(this.numberCard).subscribe(
-      (data:MovimentiCarta[])=>{
-      this.infoCard=data;
-    });
+    this.service.findCardByFiscalCode().subscribe(
+      (data: ResponseModel) => {
+        this.card = data.responseBody as Card;
+      }
 
-  this.service.findAllClienti().subscribe(
-    (data : AnagraficaCliente[])=>{
-      this.test = data[0];
-    }
-    );
+    )
 
-  //this.cliente.findProprietarioById('svlgrl').subscribe(data =>{console.log(data)});
-  //this.router.navigate(['dati-bancari']);
-}
+    this.service.getCardTransaction().subscribe(
+      (data: ResponseModel) => {
+        this.infoCard = data.responseBody as MovimentiCarta[];
+      });
 
+  }
 }

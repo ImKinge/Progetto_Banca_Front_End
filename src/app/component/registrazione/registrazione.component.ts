@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ClienteService} from "../../servizi/servizi-cliente/cliente.service";
 import {Router} from "@angular/router";
-import {AnagraficaCliente} from "../../models/anagraficaCliente";
+import {RegisterRequest} from "../../models/registerRequest";
 
 @Component({
   selector: 'app-registrazione',
@@ -10,47 +10,36 @@ import {AnagraficaCliente} from "../../models/anagraficaCliente";
 })
 export class RegistrazioneComponent implements OnInit{
 
-  clienti : any;
-  message = "Anagraphic User Data";
-  registerClient:any;
-  inputName: string ="";
-  inputSurname:string="";
-  inputDate: Date|undefined;
-  inputAddress:string="";
-  inputFiscalCode:string="";
-  inputPhone:number=0;
-  inputEmail:string="";
+  inputFiscalCode: string = "";
+  inputName: string = "";
+  inputSurname: string = "";
+  inputDate: Date = new Date();
+  inputAddress: string = "";
+  inputPhone: number = 0;
+  inputEmail: string = "";
 
-  constructor(private cliente:ClienteService,private router:Router){};
+  constructor(private service:ClienteService,private router:Router){};
 
 
   ngOnInit():void{
-    this.cliente.findAllClienti().subscribe(
-      (data : AnagraficaCliente[])=>{
-        this.clienti = data[0];
-      }
-    );
-
-   
 
   }
+
   registration(){
-    this.registerClient={
-      "id":this.inputFiscalCode, 
-      "name":this.inputName,
-      "surname":this.inputSurname,
-      "dateOfBirth":this.inputDate,
-      "email":this.inputEmail,
-      "infoPhone":this.inputPhone,
-      "address":this.inputAddress}
-    this.cliente.saveCliente(this.registerClient).subscribe(
-      ()=>{        
-      });
+
+   let registerRequestObj = new RegisterRequest();
+   registerRequestObj.name = this.inputName;
+   registerRequestObj.surname = this.inputSurname;
+   registerRequestObj.address = this.inputAddress;
+   registerRequestObj.infoPhone = this.inputPhone;
+   registerRequestObj.id= this.inputFiscalCode;
+   registerRequestObj.dateOfBirth= this.inputDate;
+   registerRequestObj.email= this.inputEmail;
+
+    //this.service.saveCliente(this.registerRequestObj).subscribe(() => {});
+
   }
 
-  // goToHome() {
-  //   this.router.navigate(["home"]);
-  // }
 
   goToSetPin() {
     this.router.navigate(["set-pin"]);

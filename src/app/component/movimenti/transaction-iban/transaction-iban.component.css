@@ -7,10 +7,6 @@
   color: white;
 }
 
-i {
-  font-size: 3vh;
-}
-
 i.fa-coins {
   font-size: 8vh;
 }
@@ -25,4 +21,9 @@ i.fa-coins {
 
 .form-group {
   margin-top: 20px;
+}
+
+.date {
+  display: flex;
+
 }

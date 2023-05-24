@@ -6,22 +6,22 @@
 
         <div class="form-group">
           <i class="fas fa-user"></i>
-          <input class="myInput" type="text" placeholder="Name" id="name" required>
+          <input [(ngModel)]="inputName" class="myInput" type="text" name="inputFiscalCode" placeholder="Name" id="name" required>
         </div>
 
         <div class="form-group">
           <i class="fas fa-sharp fa-regular fa-file-signature"></i>
-          <input class="myInput" type="text" placeholder="Surname" id="surname" required>
+          <input [(ngModel)]="inputSurname" class="myInput" type="text" placeholder="Surname" id="surname" required>
         </div>
 
         <div class="form-group">
           <i class="fas fa-solid fa-cake-candles"></i>
-          <input class="myInput" type="date" placeholder="Date of birth" id="dateOfBirth" required>
+          <input [(ngModel)]="inputDate" class="myInput" type="date" placeholder="Date of birth" id="dateOfBirth" required>
         </div>
 
         <div class="form-group">
           <i class="fas fa-solid fa-address-card"></i>
-          <input class="myInput" type="text" placeholder="Address" id="address" required>
+          <input [(ngModel)]="inputAddress" class="myInput" type="text" placeholder="Address" id="address" required>
         </div>
 
       </div>
@@ -29,29 +29,23 @@
 
         <div class="form-group">
           <i class="fas fa-solid fa-code"></i>
-          <input class="myInput" type="text" placeholder="Fiscal Code" id="fiscalCode" required>
+          <input [(ngModel)]="inputFiscalCode" class="myInput" type="text" placeholder="Fiscal Code" id="fiscalCode" required>
         </div>
 
         <div class="form-group">
           <i class="fas fa-solid fa-phone"></i>
-          <input class="myInput" type="text" placeholder="Telephon" id="telephon" required>
+          <input [(ngModel)]="inputPhone" class="myInput" type="text" placeholder="Telephon" id="telephon" required>
         </div>
 
         <div class="form-group">
           <i class="fas fa-solid fa-inbox"></i>
-          <input class="myInput" type="email" placeholder="Email" id="email" required>
+          <input [(ngModel)]="inputEmail" class="myInput" type="email" placeholder="Email" id="email" required>
         </div>
 
-        <div class="form-group">
-          <i class="fas fa-solid fa-laptop-code"></i>
-          <input class="myInput" type="text" placeholder="User Code" id="userCode" required>
-        </div>
-      </div>
     </div>
-
+  </div>
     <input type="submit" class="butt" (click)="goToSetPin()" value="SIGN IN">
     <input type="submit" class="butt back" (click)="goToLogin()" value="BACK TO LOGIN">
-  </div>
 </div>
 
 <!--<div class="container">-->

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './component/home/home.component';
-import {ClienteService} from "./servizi/servizi-cliente/cliente.service";
-import {Router} from "@angular/router";
+import { Router} from "@angular/router";
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
 
 export class AppComponent {
   title = 'progettoBanca';
-
 
   constructor(private router:Router){};
 
@@ -22,12 +21,17 @@ export class AppComponent {
   goToHome() {
   this.router.navigate(["home"]);
   }
+
   goToProfile(){
     this.router.navigate(["user-info"]);
   }
 
   goToLogin() {
     this.router.navigate(["login"]);
+  }
+
+  openDialog() {
+
   }
 
 }

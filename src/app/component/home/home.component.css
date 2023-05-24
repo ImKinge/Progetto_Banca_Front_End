@@ -5,7 +5,6 @@
 
 .flex-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -40,11 +39,7 @@ img.logo-global {
 }
 
 i {
-  font-size: 3vh;
-}
-
-i.fa-joomla {
-  font-size: 8vh;
+  font-size: 2vh;
 }
 
 i.fa-coins {
@@ -59,7 +54,7 @@ i.fa-coins {
 .property-card {
   font-size: 80%;
   color: gray;
-  margin-top: 60%;
+  margin-top: 40%;
 }
 
 .margin-element {
@@ -68,10 +63,6 @@ i.fa-coins {
 
 .margin-element-column2 {
   padding: 4vw;
-}
-
-.margin {
-
 }
 
 .margin-items {
@@ -86,12 +77,18 @@ table {
   margin-top: 3%;
 }
 
+
 tr {
   display: flex;
 }
 
 th.description {
   margin-left: 20px;
+}
+
+.description p {
+  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 p.import-label-negative {
@@ -107,28 +104,21 @@ p.import-label-positive {
 }
 
 .square {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 32px;
   justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
 }
 
-.color-spotify-xbox {
-  background: rgb(31,255,0);
-  background: linear-gradient(135deg, rgba(31,255,0,0.6839110644257703) 0%, rgba(195,195,195,0.6783088235294117) 100%);
-}
-
-.color-apple {
-  background: rgb(255,0,189);
-  background: linear-gradient(135deg, rgba(255,0,189,0.5914740896358543) 0%, rgba(195,195,195,0.6783088235294117) 100%);
-}
-
-.color-amazon {
-  background: rgb(0,125,255);
-  background: linear-gradient(135deg, rgba(0,125,255,0.5914740896358543) 0%, rgba(254,255,0,0.6783088235294117) 100%);
+.color-shop-box {
+  background: rgb(74,183,237);
+  background: linear-gradient(135deg, rgba(74,183,237,1) 0%, rgba(227,227,227,1) 100%);
 }
 
 .capacity {
+  width: 40px;
+  height: 40px;
   background-color: white;
 }
 
@@ -147,6 +137,7 @@ p.import-label-positive {
   border-radius: 20px 0 0 20px;
   color: white;
   justify-content: space-around;
+  align-items: center;
 }
 
 .save-money {
@@ -155,7 +146,27 @@ p.import-label-positive {
   margin: 0;
 }
 
+.capacity {
+  border-radius: 10px;
+}
+
 .data {
   margin: 0;
 }
 
+.container-title {
+  align-items: center;
+}
+
+.date-transaction {
+  font-size: 12px;
+}
+
+.box-table {
+  background-color: rgb(238, 238, 238);
+  border-radius: 7px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 13px 13px 16px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 16px -8px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 16px -8px rgba(0,0,0,0.75);
+}
