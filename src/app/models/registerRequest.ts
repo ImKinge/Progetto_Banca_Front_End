@@ -13,4 +13,5 @@ export class RegisterRequest {
     public infoPhone :number = 0;
     public address :string = "";
 
+
 }

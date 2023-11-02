@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   currentAccount: CurrentAccount = new CurrentAccount();
   card : Card = new Card();
 
-
   constructor(private router: Router, private service: ClienteService) {
   };
 
@@ -53,4 +52,5 @@ export class HomeComponent implements OnInit {
       });
 
   }
+
 }

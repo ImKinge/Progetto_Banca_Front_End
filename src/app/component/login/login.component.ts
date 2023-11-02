@@ -36,7 +36,11 @@ export class LoginComponent {
 
     this.service.login(this.jwtRequest).subscribe(res => {
       if(res.res.success) {
-        localStorage.setItem('token', res.res.responseBody.accessToken) //accessToken è la chiave che troviamo nella respons, controlla Postman
+        /*
+        accessToken è la chiave che troviamo nella respons, controlla Postman (res->responseBody)
+        mentre per vedere la risposta da front end ispezioniamo la chiamata login (res->res->responseBody)
+        */
+        localStorage.setItem('token', res.res.responseBody.accessToken)
         this.openDialogSuccess();
       }else {
         console.log(res);

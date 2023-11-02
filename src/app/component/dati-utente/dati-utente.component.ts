@@ -1,8 +1,9 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { ClienteService} from "../../servizi/servizi-cliente/cliente.service";
 import { Router} from "@angular/router";
 import { HttpClient} from "@angular/common/http";
-import { RegisterRequest } from 'src/app/models/registerRequest';
+import {ColumnMode} from "@swimlane/ngx-datatable";
+
 
 @Component({
   selector: 'app-dati-utente',
@@ -11,30 +12,43 @@ import { RegisterRequest } from 'src/app/models/registerRequest';
 })
 
 export class DatiUtenteComponent implements OnInit{
-
-  fiscalCode="svlgrl94a30z111l";
-  myInfo : any;
-  message = "Anagraphic User Data";
-  valoreConto: string = ''
-
-  constructor(private http: HttpClient, private cliente:ClienteService,private router:Router){};
-
+  name = 'Angular';
+  enableEdit = false;
+  enableEditIndex: number = 0;
+  backendData = [{
+    "name": 'Target',
+    "value": '100',
+    "description": 'abc'
+  },
+    {
+      "name": 'Size',
+      "value": '20',
+      "description": 'def'
+    },
+    {
+      "name": 'Industry',
+      "value": '40',
+      "description": 'ghi'
+    }]
+  @ViewChild('tst') tst: any;
 
   ngOnInit(): void {
-    // this.cliente.findProprietarioById(this.fiscalCode).subscribe(
-    //   (data: RegisterRequest) => {
-    //     this.myInfo= data;
-    //     //debugger;  /*A video ti ferma sul questo punto per poi sganciarlo dall'ispezionatore del web*/
-    //   }
-    // );
+    throw new Error('Method not implemented.');
   }
 
-  goToBonifico() {
-    this.router.navigate(["bonifico"]);
+  enableEditMethod(e: Event, i: number) {
+    this.enableEdit = true;
+    this.enableEditIndex = i;
+    console.log(i, e);
   }
 
-  goToListaMovimenti() {
-    this.router.navigate(["movimenti"]);
+  logValue(){
+    console.log(this.backendData)
   }
+
+  test(){
+    this.tst.control.touched = true
+  }
+
 
 }

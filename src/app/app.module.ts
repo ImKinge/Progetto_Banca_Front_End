@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { DatiUtenteComponent } from './component/dati-utente/dati-utente.component';
-import { MovimentiComponent } from './component/movimenti/movimenti.component';
 import { RegistrazioneComponent } from './component/registrazione/registrazione.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +19,9 @@ import { MatDatepickerModule} from "@angular/material/datepicker";
 import { MatInputModule} from "@angular/material/input";
 import { MatNativeDateModule} from "@angular/material/core";
 import {TransactionIbanComponent} from "./component/movimenti/transaction-iban/transaction-iban.component";
+import { ReportComponent } from './component/report/report.component';
+import {MatSelectModule} from "@angular/material/select";
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,12 @@ import {TransactionIbanComponent} from "./component/movimenti/transaction-iban/t
     HomeComponent,
     LoginComponent,
     DatiUtenteComponent,
-    MovimentiComponent,
     RegistrazioneComponent,
     AdminComponent,
     TransactionIbanComponent,
     TransactionCardComponent,
     ErrorComponent,
+    ReportComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,8 @@ import {TransactionIbanComponent} from "./component/movimenti/transaction-iban/t
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
+    MatSelectModule,
+    NgxDatatableModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

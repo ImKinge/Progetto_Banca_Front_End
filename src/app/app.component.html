@@ -11,7 +11,7 @@
     <div class="flex-container-navbar navigation">
 
       <!--Column Icon-->
-      <div class="flex-container-column-navbar space">
+      <div class="flex-container-column-navbar space icon-container"><!--*ngIf="checkLogin"-->
 
         <div class="flex-container-navbar">
           <ul>
@@ -32,7 +32,7 @@
             </li>
           </ul>
         </div>
-        <div class="flex-container-navbar container-logout">
+        <div class="flex-container-navbar container-logout-icon">
           <ul>
             <li class="nav-item logout">
               <span class="material-icons logout">logout</span>
@@ -44,7 +44,7 @@
       <!--End Column Icon-->
 
       <!--Column Button-->
-      <div class="flex-container-column-navbar space">
+      <div class="flex-container-column-navbar space label-container">
 
         <div class="flex-container-navbar">
           <ul class="ul-button">
@@ -55,10 +55,10 @@
               <button type="button" class="btn btn-outline-dark" (click)="goToProfile()"> Profile</button>
             </li>
             <li class="button">
-              <button type="button" class="btn btn-outline-dark" > Wallet</button>
+              <button type="button" class="btn btn-outline-dark">Wallet</button>
             </li>
             <li class="button">
-              <button type="submit" class="btn btn-outline-dark" > Reports</button>
+              <button type="submit" class="btn btn-outline-dark" (click)="goToReport()"> Reports</button>
             </li>
             <li class="button">
               <button type="submit" class="btn btn-outline-dark" (click)="goToIban()"> Transfers</button>
@@ -66,7 +66,7 @@
           </ul>
         </div>
 
-        <div class="flex-container-navbar container-logout">
+        <div class="flex-container-navbar container-logout-label">
           <ul>
             <li class="nav-item logout">
               <button type="button" class="btn logout btn-outline-dark" (click)="goToLogin()"> Log out</button>
@@ -80,7 +80,7 @@
     </div>
     <!-- End Navigation-->
   </div>
-  <div class="w-100">
+  <div class="w-100 page-container">
     <router-outlet></router-outlet>
   </div>
 </div>

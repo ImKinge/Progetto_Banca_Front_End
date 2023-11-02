@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="table-container">
+    <table>
+      <tr *ngFor="let row of backendData; index as i;"  class="hover-highlight">
+
+        <td class="benchmark_name">
+          {{row.name}}
+        </td>
+        <td>
+          <input [ngClass]="{'red': tst.touched}" class="input-without-outline" [(ngModel)]="row.value" #tst="ngModel" (ngModelChange)="test()">
+        </td>
+        <td>
+          {{row.description}}
+        </td>
+        <td>
+
+        </td>
+      </tr>
+    </table>
+
+    <button (click)="logValue()">CLICCAMI</button>
+  </div>
+</div>

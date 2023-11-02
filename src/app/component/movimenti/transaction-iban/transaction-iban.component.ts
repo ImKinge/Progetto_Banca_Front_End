@@ -5,7 +5,7 @@ import { CurrentAccount} from "../../../models/currentAccount";
 import { ResponseModel } from "../../../models/responseModel";
 import { MatDialog } from "@angular/material/dialog";
 import { ErrorComponent} from "../../error/error.component";
-import {FormControl} from "@angular/forms";
+import { FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-transaction-iban',

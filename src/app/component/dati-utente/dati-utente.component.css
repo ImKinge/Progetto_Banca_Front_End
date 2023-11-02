@@ -1,71 +1,31 @@
-/** {*/
-/*  margin: 0;*/
-/*  padding : 0;*/
-/*  box-sizing: border-box;*/
-/*  font-family: 'Poppins', sans-serif;*/
-/*}*/
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/*body {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  min-height: 100vh;*/
-/*  background-size: cover;*/
-/*  background-position: center;*/
-/*}*/
+.table-container {
 
-/*!*CSS del form di dati utenti*!*/
-/*.container {*/
-/*  position: absolute;*/
-/*  width: 95%;*/
-/*  height: 200px;*/
-/*  background: transparent;*/
-/*  border: 2px solid rgba(255, 255, 255, .5);*/
-/*  border-radius: 20px;*/
-/*  backdrop-filter: blur(10px); !*Rende il background del contenitore sfocato in base ai px*!*/
-/*  box-shadow: 0 0 30px rgba(0, 0, 0, .5); !*Crea un effetto ombra sotto al container*!*/
-/*  display: flex;*/
-/*  justify-content: center; !*Dispone gli elementi nella parte superiore centrale del contenitore*!*/
-/*  align-items: center; !*Dispone al centro del contenitore gli elementi*!*/
-/*  top:150px;*/
-/*}*/
-
-/*.container h2 {*/
-/*  width: 10%;*/
-/*  top: -50px;*/
-/*  position: relative;*/
-/*  margin-left: 30px;*/
-/*  font-size: 2em;*/
-/*  color: black;*/
-/*}*/
-
-/*.form-box {*/
-/*  width: 100%;*/
-/*}*/
-
-/*.input-box {*/
-/*  width: 15%;*/
-/*  display: inline-block;*/
-/*}*/
-
+}
 
 .main-container {
     justify-content: center;
     width: 100%;
   }
-  
+
   .flex-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .flex-container-column {
     display: flex;
     flex-direction: column;
   }
-  
-  
+
+
   .card-container {
     width: 300px;
     height: 200px;
@@ -77,120 +37,120 @@
     border-radius: 10px;
     box-shadow: 17px 20px 17px 1px rgba(156,156,156,0.88);
   }
-  
+
   .top-element {
     margin-bottom: 5%;
   }
-  
+
   img.chip {
     margin-top: 20px;
   }
-  
+
   img.logo-global {
     opacity: 0.7;
   }
-  
+
   i {
     font-size: 3vh;
   }
-  
+
   i.fa-joomla {
     font-size: 8vh;
   }
-  
+
   i.fa-coins {
     font-size: 8vh;
   }
-  
+
   .transaction {
     font-size: 4vh;
     margin-top: 30%;
   }
-  
+
   .property-card {
     font-size: 80%;
     color: gray;
     margin-top: 60%;
   }
-  
+
   .margin-element {
     padding: 100px;
   }
-  
+
   .margin-element-column2 {
     padding: 4vw;
   }
-  
+
   .margin {
-  
+
   }
-  
+
   .margin-items {
     margin-top: 4vw;
   }
-  
+
   .arrow  {
     margin-left: 40px;
   }
-  
+
   table {
     margin-top: 3%;
   }
-  
+
   tr {
     display: flex;
     margin-top: 15%;
   }
-  
+
   th.description {
     margin-left: 20px;
   }
-  
+
   p.import-label-negative {
     color: red;
   }
-  
+
   p.import-label-positive {
     color: green;
   }
-  
+
   .budget {
     text-align: center;
   }
-  
+
   .square {
     width: 40px;
     height: 40px;
     border-radius: 10px;
     justify-content: center;
   }
-  
+
   .color-spotify-xbox {
     background: rgb(31,255,0);
     background: linear-gradient(135deg, rgba(31,255,0,0.6839110644257703) 0%, rgba(195,195,195,0.6783088235294117) 100%);
   }
-  
+
   .color-apple {
     background: rgb(255,0,189);
     background: linear-gradient(135deg, rgba(255,0,189,0.5914740896358543) 0%, rgba(195,195,195,0.6783088235294117) 100%);
   }
-  
+
   .color-amazon {
     background: rgb(0,125,255);
     background: linear-gradient(135deg, rgba(0,125,255,0.5914740896358543) 0%, rgba(254,255,0,0.6783088235294117) 100%);
   }
-  
+
   .capacity {
     background-color: white;
   }
-  
+
   .square p {
     color: black;
     font-size: 15px;
     font-weight: bold;
     margin: 0;
   }
-  
+
   .container-money-save {
     width: 30vw;
     height: 8vh;
@@ -200,15 +160,23 @@
     color: white;
     justify-content: space-around;
   }
-  
+
   .save-money {
     font-size: 80%;
     color: gray;
     margin: 0;
   }
-  
+
   .data {
     margin: 0;
   }
-  
-  
+
+  .input-without-outline, .input-without-outline:focus-visible{
+    border: none!important;
+    outline: none;
+  }
+
+  .red{
+    background-color: red;
+  }
+

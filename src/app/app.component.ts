@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router} from "@angular/router";
 
 
@@ -8,31 +8,44 @@ import { Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'progettoBanca';
+  //checkLogin: boolean = false;
 
   constructor(private router:Router){};
 
+  ngOnInit():void{
+    //this.checkLogin = localStorage.getItem('token') ? true : false;
+  }
 
   goToIban(){
     this.router.navigate(["ibanTransaction"]);
   }
 
   goToHome() {
-  this.router.navigate(["home"]);
+    if (localStorage.getItem('token')) {
+      this.router.navigate(["home"]);
+    }
+  }
+
+  goToReport() {
+    if (localStorage.getItem('token')) {
+      this.router.navigate(["report"]);
+    }
   }
 
   goToProfile(){
-    this.router.navigate(["user-info"]);
+    if (localStorage.getItem('token')) {
+      this.router.navigate(["user-info"]);
+    }
   }
 
   goToLogin() {
+    localStorage.removeItem('token');
     this.router.navigate(["login"]);
   }
 
   openDialog() {
-
   }
-
 }
 

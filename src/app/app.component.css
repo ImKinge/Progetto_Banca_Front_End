@@ -5,7 +5,21 @@
 .flex-container-column-navbar {
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
+
+.page-container {
+  padding-left: 210px;
+}
+
+.container-logout-icon {
+  margin-top: 100px;
+}
+
+.container-logout-label {
+  margin-top: 94px;
+}
+
 
 .navbar {
   justify-content: flex-start;
@@ -13,6 +27,14 @@
   height: 100vh;
   border-right: 2px solid lightgrey;
 
+}
+
+.icon-container {
+  padding-top: 1px;
+}
+
+.label-container {
+  margin-left: 35px;
 }
 
 .title-container {
