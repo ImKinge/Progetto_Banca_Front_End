@@ -22,6 +22,8 @@ import {TransactionIbanComponent} from "./component/movimenti/transaction-iban/t
 import { ReportComponent } from './component/report/report.component';
 import {MatSelectModule} from "@angular/material/select";
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ModalKpiComponent } from './component/modal-kpi/modal-kpi.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     TransactionCardComponent,
     ErrorComponent,
     ReportComponent,
+    ModalKpiComponent,
   ],
   imports: [
     BrowserModule,

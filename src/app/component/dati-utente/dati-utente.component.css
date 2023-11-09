@@ -1,182 +1,137 @@
-.container {
-  height: 100vh;
+.container-table {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  height: 100vh;
+  justify-content: center;
+  padding: 20px;
+}
+
+.table-container-item {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 300px;
+}
+
+/*per rimuovere l'up e down dell'incremento dei numeri su input con type number*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container-gamma-and-button {
+  display: flex;
+}
+
+.container-two {
+  margin-top: 50px;
+}
+
+/*table css*/
+
+table {
+  width: 100%;
+}
+
+th div input {
+  text-align: center;
+}
+
+.table-container-item thead th {
+  position: sticky;
+  top: 0;
+}
+
+.table-header-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.small-input-header {
+  width: 90px;
+}
+
+.big-input-header {
+  width: 500px;
+}
+
+.input-header {
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: center;
 }
 
-.table-container {
-
+.button-up-table {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 25px;
 }
 
-.main-container {
-    justify-content: center;
-    width: 100%;
-  }
+.btn-up {
+  margin: 5px;
+  background-color: darkcyan;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
 
-  .flex-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.btn-second-table {
+  background-color: darkcyan;
+  color: #ffffff;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
 
-  .flex-container-column {
-    display: flex;
-    flex-direction: column;
-  }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td, .table th {
+  padding: 5px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table th {
+  background-color: darkcyan;
+  color: #ffffff;
+}
+
+.table tbody tr:nth-child(even), .table tbody tr:nth-child(even) input{
+  background-color: #f5f5f5;
+}
 
 
-  .card-container {
-    width: 300px;
-    height: 200px;
-    background: rgb(0,146,255);
-    background: rgb(140,140,140);
-    background: linear-gradient(162deg, rgba(140,140,140,1) 0%, rgba(131,131,131,1) 15%, rgba(0,0,0,1) 100%);
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 10px;
-    box-shadow: 17px 20px 17px 1px rgba(156,156,156,0.88);
-  }
+.yellow-color {
+  background-color: yellow!important;
+}
 
-  .top-element {
-    margin-bottom: 5%;
-  }
+.none {
+  background-color: white;
+}
 
-  img.chip {
-    margin-top: 20px;
-  }
+.input-without-outline, .input-without-outline:focus-visible {
+  border: none !important;
+  outline: none;
+  text-align: center;
+}
 
-  img.logo-global {
-    opacity: 0.7;
-  }
+input:focus {
+  outline: none;
+}
 
-  i {
-    font-size: 3vh;
-  }
-
-  i.fa-joomla {
-    font-size: 8vh;
-  }
-
-  i.fa-coins {
-    font-size: 8vh;
-  }
-
-  .transaction {
-    font-size: 4vh;
-    margin-top: 30%;
-  }
-
-  .property-card {
-    font-size: 80%;
-    color: gray;
-    margin-top: 60%;
-  }
-
-  .margin-element {
-    padding: 100px;
-  }
-
-  .margin-element-column2 {
-    padding: 4vw;
-  }
-
-  .margin {
-
-  }
-
-  .margin-items {
-    margin-top: 4vw;
-  }
-
-  .arrow  {
-    margin-left: 40px;
-  }
-
-  table {
-    margin-top: 3%;
-  }
-
-  tr {
-    display: flex;
-    margin-top: 15%;
-  }
-
-  th.description {
-    margin-left: 20px;
-  }
-
-  p.import-label-negative {
-    color: red;
-  }
-
-  p.import-label-positive {
-    color: green;
-  }
-
-  .budget {
-    text-align: center;
-  }
-
-  .square {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    justify-content: center;
-  }
-
-  .color-spotify-xbox {
-    background: rgb(31,255,0);
-    background: linear-gradient(135deg, rgba(31,255,0,0.6839110644257703) 0%, rgba(195,195,195,0.6783088235294117) 100%);
-  }
-
-  .color-apple {
-    background: rgb(255,0,189);
-    background: linear-gradient(135deg, rgba(255,0,189,0.5914740896358543) 0%, rgba(195,195,195,0.6783088235294117) 100%);
-  }
-
-  .color-amazon {
-    background: rgb(0,125,255);
-    background: linear-gradient(135deg, rgba(0,125,255,0.5914740896358543) 0%, rgba(254,255,0,0.6783088235294117) 100%);
-  }
-
-  .capacity {
-    background-color: white;
-  }
-
-  .square p {
-    color: black;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .container-money-save {
-    width: 30vw;
-    height: 8vh;
-    margin-left: 20%;
-    background-color: black;
-    border-radius: 20px 0 0 20px;
-    color: white;
-    justify-content: space-around;
-  }
-
-  .save-money {
-    font-size: 80%;
-    color: gray;
-    margin: 0;
-  }
-
-  .data {
-    margin: 0;
-  }
-
-  .input-without-outline, .input-without-outline:focus-visible{
-    border: none!important;
-    outline: none;
-  }
-
-  .red{
-    background-color: red;
-  }
 

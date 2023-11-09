@@ -1,23 +1,180 @@
-<div class="container">
-  <div class="table-container">
-    <table>
-      <tr *ngFor="let row of backendData; index as i;"  class="hover-highlight">
+<div class="container-fluid container-table">
 
-        <td class="benchmark_name">
-          {{row.name}}
-        </td>
-        <td>
-          <input [ngClass]="{'red': tst.touched}" class="input-without-outline" [(ngModel)]="row.value" #tst="ngModel" (ngModelChange)="test()">
-        </td>
-        <td>
-          {{row.description}}
-        </td>
-        <td>
+  <!--  Contenitore 1 tabella-->
+  <div class="container-one">
+    <div class="table-container-item">
+      <table class="table">
+        <thead>
+        <th>
+          <div class="table-header-input">
+            <span>Topic Name</span>
+            <input (keyup)="searchFilterKpiTable()" #topicNameVar class="input-header" type="text" name="" id="1"
+                   placeholder="Enter topic name">
+          </div>
+        </th>
+        <th>
+          <div class="table-header-input">
+            <span>Id Topic</span>
+            <input (keyup)="searchFilterKpiTable()" #idTopicVar class="input-header" type="number" name="" id="2"
+                   placeholder="Enter id topic">
+          </div>
+        </th>
+        <th>
+          <div class="table-header-input">
+            <span>Totale</span>
+            <input (keyup)="searchFilterKpiTable()" #totaleVar class="input-header" type="number" name="" id="3"
+                   placeholder="Enter totale">
+          </div>
+        </th>
+        <th>
+          <div class="table-header-input">
+            <span>New Totale</span>
+            <input (keyup)="searchFilterKpiTable()" #newTotaleVar class="input-header" type="number" name="" id="4"
+                   placeholder="Enter new totale">
+          </div>
+        </th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of tempKpiTableArray; index as i;" class="hover-highlight">
 
-        </td>
-      </tr>
-    </table>
+          <td>
+            {{row.topic_name}}
+          </td>
 
-    <button (click)="logValue()">CLICCAMI</button>
+          <td>
+            {{row.id_topic}}
+          </td>
+
+          <td>
+            {{row.totale | number: '1.2-4'}}
+          </td>
+
+          <td>
+            {{row.new_totale | number: '1.2-4'}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--  Contenitore 2 tabella (tabella gamma bottoni e tabella grande)-->
+  <div class="container-two">
+    <div class="container-gamma-and-button">
+      <div class="table-gamma-item">
+        <table class="table">
+          <thead>
+          <th>
+            <div class="table-header">
+              <span>Gamma</span>
+            </div>
+          </th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <input [ngClass]="kpiTable[0].initGamma != kpiTable[0].gamma ? 'yellow-color' : 'none'"
+                     class="input-without-outline"
+                     type="number"
+                     [(ngModel)]="kpiTable[0].gamma">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-container button-up-table">
+        <button class="btn-up">Ricalcolo Kpi</button>
+        <button class="btn-up">Aggiungi Topic</button>
+      </div>
+    </div>
+
+    <div class="table-container-item">
+      <table class="table">
+        <thead>
+        <th>
+          <div class="table-header-input">
+            <span>Id P <img src="favicon.ico" (click)="sortFunction('id_paragraph')"></span>
+            <input (keyup)="searchFilterKpiParamTable()" #idParagraphVar class="input-header small-input-header" type="number" name="" id="20"
+                   placeholder="Enter id p">
+          </div>
+        </th>
+        <th>
+          <div class="table-header">
+            <span>Content</span>
+            <input (keyup)="searchFilterKpiParamTable()" #contentVar class="input-header big-input-header" type="text" name="" id="21"
+                   placeholder="Enter content">
+          </div>
+        </th>
+        <th>
+          <div class="table-header-input">
+            <span>Sentiment Subj</span>
+            <input (keyup)="searchFilterKpiParamTable()" #sentimentSubjVar class="input-header small-input-header" type="text" name="" id="24"
+                   placeholder="Enter subj">
+          </div>
+        </th>
+        <th>
+          <div class="table-header-input">
+            <span>Parag W</span>
+            <input (keyup)="searchFilterKpiParamTable()" #paragraphWVar class="input-header" type="number" name="" id="23"
+                   placeholder="Enter parag w">
+          </div>
+        </th>
+        <th>
+          <div class="table-header">
+            <span>Sigma</span>
+          </div>
+        </th>
+        <th *ngFor="let headers of kpiParamTable">
+          <div class="table-header">
+            <span>{{headers.topic_name}}</span>
+<!--            <input (keyup)="searchFilterKpiParamTable()" #sigmaVar class="input-header" type="number" name="" id="24"-->
+<!--                   placeholder="Enter sigma">-->
+          </div>
+        </th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of tempKpiParamTableArray; index as i;" class="hover-highlight">
+
+          <td>
+            {{row.id_paragraph}}
+          </td>
+
+          <td class="grow-size">
+            {{row.content}}
+          </td>
+
+          <td>
+            {{row.sentiment_subj}}
+          </td>
+
+          <td>
+            <input [ngClass]="row.initParagraphW != row.paragraph_weight ? 'yellow-color' : 'none'"
+                   class="input-without-outline"
+                   type="number"
+                   [(ngModel)]="row.paragraph_weight">
+          </td>
+
+          <td>
+            <input [ngClass]="row.initialSigma != row.sentiment ? 'yellow-color' : 'none'"
+                   class="input-without-outline"
+                   type="number"
+                   [(ngModel)]="row.sentiment">
+          </td>
+          <td *ngFor="let headers of kpiParamTable">
+            <ng-container *ngIf="row.topic_name == headers.topic_name">
+              <input [ngClass]="row.initScore != row.score ? 'yellow-color' : 'none'"
+                     class="input-without-outline"
+                     type="number"
+                     [(ngModel)]="row.score">
+            </ng-container>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="button-container">
+      <button class="btn-second-table" (click)="removeNewParams()">Annulla Modifiche</button>
+      <button class="btn-second-table" (click)="saveParams()">Salva Modifiche</button>
+    </div>
   </div>
 </div>
