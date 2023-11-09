@@ -23,6 +23,7 @@ import { ReportComponent } from './component/report/report.component';
 import {MatSelectModule} from "@angular/material/select";
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ModalKpiComponent } from './component/modal-kpi/modal-kpi.component';
+import { MessageComponent } from './component/message/message.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ModalKpiComponent } from './component/modal-kpi/modal-kpi.component';
     ErrorComponent,
     ReportComponent,
     ModalKpiComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
