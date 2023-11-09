@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="myCard">
+    <div class="myCtn">
+      <form class="myForm text-center">
+        <header>Current Account Report</header>
+
+        <!-- Operation -->
+        <div class="form-group">
+          <mat-form-field>
+            <mat-label>Operation</mat-label>
+            <mat-select [formControl]="selectOperation" >
+              <mat-option value="Iban">
+                Iban
+              </mat-option>
+              <mat-option value="Card">
+                Card
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field class="form-group">
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="picker" [value]="inputStartDate" [formControl]="inputStartDate">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field class="form-group">
+            <mat-label>End date</mat-label>
+            <input matInput [matDatepicker]="picker1" [value]="inputEndDate" [formControl]="inputEndDate">
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field>
+            <mat-label>Format</mat-label>
+            <mat-select>
+              <mat-option value="Csv">
+                Csv
+              </mat-option>
+              <mat-option value="Pdf">
+                Pdf
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary" (click)="downloadFile()">Make export</button>
+    </div>
+  </div>
+</div>

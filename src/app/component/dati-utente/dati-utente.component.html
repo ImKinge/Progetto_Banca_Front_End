@@ -2,41 +2,45 @@
 
   <!--  Contenitore 1 tabella-->
   <div class="container-one">
-    <div class="table-container-item">
+    <div class="table-container-item kpi-table">
       <table class="table">
         <thead>
-        <th>
+        <th class="table-header-big">
           <div class="table-header-input">
             <span>Topic Name</span>
             <input (keyup)="searchFilterKpiTable()" #topicNameVar class="input-header" type="text" name="" id="1"
                    placeholder="Enter topic name">
           </div>
         </th>
-        <th>
+        <th class="table-header-small">
           <div class="table-header-input">
             <span>Id Topic</span>
             <input (keyup)="searchFilterKpiTable()" #idTopicVar class="input-header" type="number" name="" id="2"
-                   placeholder="Enter id topic">
+                   placeholder="Id topic">
           </div>
         </th>
-        <th>
+        <th class="table-header-small">
           <div class="table-header-input">
             <span>Totale</span>
             <input (keyup)="searchFilterKpiTable()" #totaleVar class="input-header" type="number" name="" id="3"
-                   placeholder="Enter totale">
+                   placeholder="Totale">
           </div>
         </th>
-        <th>
+        <th class="table-header-small">
           <div class="table-header-input">
             <span>New Totale</span>
             <input (keyup)="searchFilterKpiTable()" #newTotaleVar class="input-header" type="number" name="" id="4"
-                   placeholder="Enter new totale">
+                   placeholder="New totale">
+          </div>
+        </th>
+        <th class="table-header-small">
+          <div class="table-header">
+            <span>Rep. Index Topic</span>
           </div>
         </th>
         </thead>
         <tbody>
         <tr *ngFor="let row of tempKpiTableArray; index as i;" class="hover-highlight">
-
           <td>
             {{row.topic_name}}
           </td>
@@ -51,6 +55,31 @@
 
           <td>
             {{row.new_totale | number: '1.2-4'}}
+          </td>
+          <td>
+            <input class="input-without-outline"
+                   [disabled]="true"
+                   [value]="calculateRepIndexTopic(row.new_sigma, row.new_totale, row.gamma)">
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-rep-index-doc">
+      <table class="table">
+        <thead>
+        <th>
+          <div class="table-header">
+            <span>Rep. Index Doc</span>
+          </div>
+        </th>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <input class="input-without-outline"
+                   [disabled]="true"
+                   [value]="calculateRepIndexDoc(tempKpiTableArray[0].gamma, tempKpiTableArray[0].new_sigma)">
           </td>
         </tr>
         </tbody>
@@ -76,6 +105,7 @@
               <input [ngClass]="kpiTable[0].initGamma != kpiTable[0].gamma ? 'yellow-color' : 'none'"
                      class="input-without-outline"
                      type="number"
+                     pattern="/[0-9]+/gm"
                      [(ngModel)]="kpiTable[0].gamma">
             </td>
           </tr>
@@ -91,44 +121,42 @@
     <div class="table-container-item">
       <table class="table">
         <thead>
-        <th>
+        <th class="table-header-small-second-table">
           <div class="table-header-input">
-            <span>Id P <img src="favicon.ico" (click)="sortFunction('id_paragraph')"></span>
+            <span>Id P <i [ngClass]="sortDirection['id_paragraph'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('id_paragraph')"></i></span>
             <input (keyup)="searchFilterKpiParamTable()" #idParagraphVar class="input-header small-input-header" type="number" name="" id="20"
-                   placeholder="Enter id p">
+                   placeholder="Id p">
           </div>
         </th>
-        <th>
-          <div class="table-header">
+        <th class="table-header-big">
+          <div class="table-header-input">
             <span>Content</span>
             <input (keyup)="searchFilterKpiParamTable()" #contentVar class="input-header big-input-header" type="text" name="" id="21"
-                   placeholder="Enter content">
+                   placeholder="Content">
           </div>
         </th>
-        <th>
+        <th class="table-header-small-second-table">
           <div class="table-header-input">
-            <span>Sentiment Subj</span>
+            <span>Subj</span>
             <input (keyup)="searchFilterKpiParamTable()" #sentimentSubjVar class="input-header small-input-header" type="text" name="" id="24"
-                   placeholder="Enter subj">
+                   placeholder="Subj">
           </div>
         </th>
-        <th>
+        <th class="table-header-small-second-table">
           <div class="table-header-input">
-            <span>Parag W</span>
+            <span>Parag W <i [ngClass]="sortDirection['paragraph_weight'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('paragraph_weight')"></i></span>
             <input (keyup)="searchFilterKpiParamTable()" #paragraphWVar class="input-header" type="number" name="" id="23"
-                   placeholder="Enter parag w">
+                   placeholder="Parag w">
           </div>
         </th>
-        <th>
-          <div class="table-header">
-            <span>Sigma</span>
+        <th class="table-header-small-second-table">
+          <div>
+            <span>Sigma <i [ngClass]="sortDirection['sentiment'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('sentiment')"></i></span>
           </div>
         </th>
         <th *ngFor="let headers of kpiParamTable">
           <div class="table-header">
-            <span>{{headers.topic_name}}</span>
-<!--            <input (keyup)="searchFilterKpiParamTable()" #sigmaVar class="input-header" type="number" name="" id="24"-->
-<!--                   placeholder="Enter sigma">-->
+            <span>{{headers.topic_name}} <i [ngClass]="sortDirection['topic_name'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('topic_name')"></i></span>
           </div>
         </th>
         </thead>

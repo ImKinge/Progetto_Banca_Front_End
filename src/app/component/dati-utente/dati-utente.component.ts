@@ -53,7 +53,6 @@ export class DatiUtenteComponent implements OnInit {
       "paragraph_weight": 0.1
     }
   ]
-
   kpiTable: any = [
     {
       "url": "https://www.prnewswire.co.uk/news-releases/eco-wave-power-presents-significant-operational-progress-as-it-heads-towards-its-first-commercial-scale-project-and-reports-first-half-2023-financial-results-301940529.html",
@@ -111,6 +110,7 @@ export class DatiUtenteComponent implements OnInit {
       "new_totale": 0.0728073826954321
     }
   ]
+
   tempKpiTableArray = [...this.kpiTable];
   tempKpiParamTableArray = [...this.kpiParamTable];
 
@@ -152,7 +152,6 @@ export class DatiUtenteComponent implements OnInit {
       "paragraph_weight": 0.1
     }
   ]
-
   initialDataKpiTable: any = [
     {
       "url": "https://www.prnewswire.co.uk/news-releases/eco-wave-power-presents-significant-operational-progress-as-it-heads-towards-its-first-commercial-scale-project-and-reports-first-half-2023-financial-results-301940529.html",
@@ -245,10 +244,13 @@ export class DatiUtenteComponent implements OnInit {
     console.log(this.kpiParamTable)
 
     //init status for sorting
-    this.sortDirection["id_paragraph"] = false;
+    this.sortDirection["id_paragraph"] = true;
+    this.sortDirection["sentiment"] = true;
+    this.sortDirection["paragraph_weight"] = true;
+    this.sortDirection["topic_name"] = true;
   }
 
-  //function per filtrare la prima tabella
+  //function per filtrare gli header della prima tabella
   searchFilterKpiTable() {
     this.tempKpiTableArray = [];
     let filterObject: any = {
@@ -281,7 +283,8 @@ export class DatiUtenteComponent implements OnInit {
       }
     }
   }
-  //function per filtrare la seconda tabella
+
+  //function per filtrare gli header della seconda tabella
   searchFilterKpiParamTable () {
     this.tempKpiParamTableArray = [];
     let filterObject: any = {
@@ -315,6 +318,30 @@ export class DatiUtenteComponent implements OnInit {
         this.tempKpiParamTableArray.push(this.kpiParamTable[i]);
       }
     }
+  }
+
+  calculateRepIndexTopic (new_sigma: number, new_totale: number, gamma: number) {
+      if(new_sigma < -0.4) {
+        return this.truncateNumber(gamma * new_totale * 2)
+      } else {
+        return this.truncateNumber(gamma * new_totale);
+      }
+  }
+
+  calculateRepIndexDoc (new_sigma: number, gamma: number) {
+    let new_totale_sum = 0;
+    this.tempKpiTableArray.forEach((val: any) => {
+      new_totale_sum += val.new_totale
+    })
+    if(new_sigma < -0.4) {
+      return this.truncateNumber(gamma * new_totale_sum * 2)
+    } else {
+      return this.truncateNumber(gamma * new_totale_sum);
+    }
+  }
+
+  truncateNumber(num: number){
+    return Math.trunc(num * 10000)/ 10000
   }
 
   logValue() {
@@ -354,6 +381,7 @@ export class DatiUtenteComponent implements OnInit {
     })
   }
 
+  //funzione per ordinare in ordine crescente o decrescente
   sortFunction(colName: any) {
     if (this.sortDirection[colName] == true){
       this.tempKpiParamTableArray.sort((a, b) => a[colName] < b[colName] ? 1 : a[colName] > b[colName] ? -1 : 0)
