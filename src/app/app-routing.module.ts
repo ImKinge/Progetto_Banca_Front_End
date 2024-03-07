@@ -9,6 +9,8 @@ import { TransactionIbanComponent } from './component/movimenti/transaction-iban
 import { TransactionCardComponent } from './component/movimenti/transaction-card/transaction-card.component';
 import { ReportComponent} from "./component/report/report.component";
 import { AuthGuard } from "./component/auth/auth.guard";
+import { ServiceBankComponent } from "./component/service-bank/service-bank.component";
+import { ProfileComponent} from "./component/profile/profile.component";
 
 
 const routes: Routes = [
@@ -18,9 +20,11 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'registrazione',component:RegistrazioneComponent},
   {path:'user-info', component:DatiUtenteComponent},
-  {path:'ibanTransaction', component:TransactionIbanComponent},
+  {path:'ibanTransaction', component:TransactionIbanComponent, canActivate: [AuthGuard]},
   {path:'cardTransaction', component:TransactionCardComponent},
-  {path:'report', component:ReportComponent},
+  {path:'report', component:ReportComponent, canActivate: [AuthGuard]},
+  {path:'service-bank', component:ServiceBankComponent, canActivate: [AuthGuard]},
+  {path:'profile', component:ProfileComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

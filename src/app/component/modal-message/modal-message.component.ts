@@ -3,12 +3,12 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-message-component',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  templateUrl: './modal-message.component.html',
+  styleUrls: ['./modal-message.component.css']
 })
-export class MessageComponent {
+export class ModalMessageComponent {
 
-  constructor(public dialogRef: MatDialogRef<MessageComponent>,
+  constructor(public dialogRef: MatDialogRef<ModalMessageComponent>,
               @Inject(MAT_DIALOG_DATA) public data: {messaggio: ''},
   ) {
     /*

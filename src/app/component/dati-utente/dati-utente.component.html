@@ -114,7 +114,7 @@
       </div>
       <div class="button-container button-up-table">
         <button class="btn-up">Ricalcolo Kpi</button>
-        <button class="btn-up">Aggiungi Topic</button>
+        <button class="btn-up" (click)="addTopic()">Aggiungi Topic</button>
       </div>
     </div>
 
@@ -154,9 +154,16 @@
             <span>Sigma <i [ngClass]="sortDirection['sentiment'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('sentiment')"></i></span>
           </div>
         </th>
-        <th *ngFor="let headers of kpiParamTable">
+        <th>
+          <div>
+            <span>
+              Slider
+            </span>
+          </div>
+        </th>
+        <th *ngFor="let header of headers">
           <div class="table-header">
-            <span>{{headers.topic_name}} <i [ngClass]="sortDirection['topic_name'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('topic_name')"></i></span>
+            <span>{{header}} <i [ngClass]="sortDirection['topic_name'] == false ? 'fa-sharp fa-solid fa-sort-down' : 'fa-sharp fa-solid fa-sort-up'" (click)="sortFunction('topic_name')"></i></span>
           </div>
         </th>
         </thead>
@@ -188,6 +195,11 @@
                    type="number"
                    [(ngModel)]="row.sentiment">
           </td>
+
+          <td>
+            <input type="range" id="slider" name="slider" min="-1" max="1" step="0.1" />
+          </td>
+
           <td *ngFor="let headers of kpiParamTable">
             <ng-container *ngIf="row.topic_name == headers.topic_name">
               <input [ngClass]="row.initScore != row.score ? 'yellow-color' : 'none'"

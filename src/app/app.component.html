@@ -19,16 +19,19 @@
               <span class="material-icons">home</span>
             </li>
             <li class="icon">
-              <span class="material-icons">person</span>
+              <span class="material-icons">wallet</span>
             </li>
             <li class="icon">
-              <span class="material-icons">wallet</span>
+              <span class="material-icons">person</span>
             </li>
             <li class="icon">
               <span class="material-icons">grid_view</span>
             </li>
             <li class="icon">
               <span class="material-icons">sync_alt</span>
+            </li>
+            <li class="icon">
+              <span class="material-icons">build</span>
             </li>
           </ul>
         </div>
@@ -52,16 +55,19 @@
               <button type="submit" class="btn btn-outline-dark" (click)="goToHome()"> Overview</button>
             </li>
             <li class="button">
-              <button type="button" class="btn btn-outline-dark" (click)="goToProfile()"> Profile</button>
+              <button type="button" class="btn btn-outline-dark" (click)="goToTable()"> Wallet</button>
             </li>
             <li class="button">
-              <button type="button" class="btn btn-outline-dark">Wallet</button>
+              <button type="button" class="btn btn-outline-dark" (click)="goToProfile()"> Profile</button>
             </li>
             <li class="button">
               <button type="submit" class="btn btn-outline-dark" (click)="goToReport()"> Reports</button>
             </li>
             <li class="button">
               <button type="submit" class="btn btn-outline-dark" (click)="goToIban()"> Transfers</button>
+            </li>
+            <li class="button">
+              <button type="button" class="btn btn-outline-dark" (click)="goToServiceBank()"> Service Bank</button>
             </li>
           </ul>
         </div>
@@ -84,4 +90,5 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+
 

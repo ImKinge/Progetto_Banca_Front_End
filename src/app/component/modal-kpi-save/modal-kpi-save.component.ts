@@ -1,15 +1,15 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {MessageComponent} from "../message/message.component";
+import {ModalMessageComponent} from "../modal-message/modal-message.component";
 
 @Component({
   selector: 'app-modal-kpi',
-  templateUrl: './modal-kpi.component.html',
-  styleUrls: ['./modal-kpi.component.css']
+  templateUrl: './modal-kpi-save.component.html',
+  styleUrls: ['./modal-kpi-save.component.css']
 })
-export class ModalKpiComponent {
+export class ModalKpiSaveComponent {
 
-  constructor(public dialogRef: MatDialogRef<ModalKpiComponent>,
+  constructor(public dialogRef: MatDialogRef<ModalKpiSaveComponent>,
               @Inject(MAT_DIALOG_DATA) public data: {messaggio: ''},
               private matDialog : MatDialog,
   ) {
@@ -35,6 +35,6 @@ export class ModalKpiComponent {
   }
 
   openDialogSuccess() {
-    this.matDialog.open(MessageComponent, {data: {messaggio: 'Salvataggio avvenuto con successo!'}});
+    this.matDialog.open(ModalMessageComponent, {data: {messaggio: 'Salvataggio avvenuto con successo!'}});
   }
 }

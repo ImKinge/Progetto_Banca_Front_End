@@ -124,10 +124,12 @@ th div input {
   color: #ffffff;
 }
 
+/*Permette di avere i record 1 di un colore uno di un altro*/
 .table tbody tr:nth-child(odd), .table tbody tr:nth-child(odd) td input{
   background-color: #ffffff;
 }
 
+/*Permette di avere i record 1 di un colore uno di un altro*/
 .table tbody tr:nth-child(even), .table tbody tr:nth-child(even) td input{
   background-color: #f5f5f5;
 }
@@ -138,7 +140,7 @@ th div input {
 }
 
 .none {
-  background-color: #ffffff;
+
 }
 
 .input-without-outline, .input-without-outline:focus-visible {

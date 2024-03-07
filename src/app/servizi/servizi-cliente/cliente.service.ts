@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
-import {CustomerData} from "../../models/customerData";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ResponseModel} from "../../models/responseModel";
 import {JwtRequest} from "../../models/jwtRequest";
 import {BaseResponse} from "../../models/baseResponse";
@@ -17,21 +16,18 @@ export class ClienteService {
   baseUrlCard = "http://localhost:8080/card"
   baseReport = "http://localhost:8080/report";
   baseUrlAuthenticate = "http://localhost:8080/authenticate";
-
+  baseUrlServiceBank = "http://localhost:8080/service-bank"
+  baseUrlCart = "http://localhost:8080/cart"
+  baseUrlDetailsUser = "http://localhost:8080/details"
 
   constructor(private http: HttpClient) { }
-
-
-  saveCliente( body : any) {
-    return this.http.post(this.baseUrlCliente + '/save', body);
-  }
 
   getCardTransaction () {
     return this.http.get<ResponseModel>(this.baseUrlTransaction + '/card-transaction');
   }
 
-  findByFiscalCode (fiscalCode: any) {
-    return this.http.get<CustomerData>(this.baseUrlCliente + '/find-customer/' + fiscalCode);
+  findByFiscalCode () {
+    return this.http.get<ResponseModel>(this.baseUrlCliente + '/find-customer');
   }
 
   findCurrentAccountByFiscalCode () {
@@ -57,6 +53,30 @@ export class ClienteService {
   downloadReport(reportRequest: any) {
     return this.http.post(this.baseReport + '/download', reportRequest,
       {observe: 'response', responseType: 'blob'});
+  }
+
+  findAllServiceProduct() {
+    return this.http.get<ResponseModel>(this.baseUrlServiceBank + "/get-all-product");
+  }
+
+  addToCart(productId : any) {
+    return this.http.get<ResponseModel>(this.baseUrlCart + "/add-to-cart/" + productId);
+  }
+
+  removeToCart (productId : any) {
+    return this.http.delete<ResponseModel>(this.baseUrlCart + "/delete-to-cart/" + productId)
+  }
+
+  getCartDetailsByCustomer() {
+    return this.http.get<ResponseModel>(this.baseUrlCart + "/get-cart-details");
+  }
+
+  purchaseServiceBank (listCart: any) {
+    return this.http.post<ResponseModel>(this.baseUrlDetailsUser + "/purchase-service-bank", listCart);
+  }
+
+  getActivateServicesByCustomer() {
+    return this.http.get<ResponseModel>(this.baseUrlDetailsUser + "/get-activate-services")
   }
 
 }

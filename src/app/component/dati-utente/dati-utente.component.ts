@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ClienteService} from "../../servizi/servizi-cliente/cliente.service";
-import {MatDialog} from "@angular/material/dialog";
-import {ModalKpiComponent} from "../modal-kpi/modal-kpi.component";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {ModalKpiSaveComponent} from "../modal-kpi-save/modal-kpi-save.component";
+import {ModalAddTopicComponent} from "../modal-add-topic/modal-add-topic.component";
 
 
 
@@ -14,6 +15,8 @@ import {ModalKpiComponent} from "../modal-kpi/modal-kpi.component";
 export class DatiUtenteComponent implements OnInit {
 
   constructor(private service: ClienteService, private matDialog : MatDialog ) {}
+
+  dialogRef : any = MatDialogRef<ModalAddTopicComponent>;
 
   kpiParamTable: any = [
     {
@@ -110,6 +113,7 @@ export class DatiUtenteComponent implements OnInit {
       "new_totale": 0.0728073826954321
     }
   ]
+  headers : any;
 
   tempKpiTableArray = [...this.kpiTable];
   tempKpiParamTableArray = [...this.kpiParamTable];
@@ -243,11 +247,21 @@ export class DatiUtenteComponent implements OnInit {
     })
     console.log(this.kpiParamTable)
 
+    this.headers = this.retriveTopicColumns(this.tempKpiParamTableArray);
+
     //init status for sorting
     this.sortDirection["id_paragraph"] = true;
     this.sortDirection["sentiment"] = true;
     this.sortDirection["paragraph_weight"] = true;
     this.sortDirection["topic_name"] = true;
+  }
+
+  retriveTopicColumns(table: any){
+    let result: any[] = [];
+    table.forEach((record : any) => {
+      if(!result.includes(record.topic_name)) result.push(record.topic_name);
+    });
+    return result;
   }
 
   //function per filtrare gli header della prima tabella
@@ -393,11 +407,21 @@ export class DatiUtenteComponent implements OnInit {
     }
   }
 
+  //modale che si apre per il salvataggio delle modifiche
   saveParams() {
    this.openDialogSave();
   }
 
   openDialogSave() {
-    this.matDialog.open(ModalKpiComponent, {data: {messaggio: 'Salvataggio dei parametri modificati, vuoi procedere?'}});
+    this.matDialog.open(ModalKpiSaveComponent, {data: {messaggio: 'Salvataggio dei parametri modificati, vuoi procedere?'}});
   }
+
+  addTopic() {
+    this.dialogRef = this.matDialog.open(ModalAddTopicComponent, {data: {messaggio: 'Seleziona una classe e un topic'}});
+    this.dialogRef.componentInstance.submitClicked.subscribe((result : any)=> {
+      this.headers.push(result);
+    })
+
+  }
+
 }

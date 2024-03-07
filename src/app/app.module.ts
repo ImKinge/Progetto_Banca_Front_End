@@ -18,12 +18,17 @@ import { ErrorComponent } from './component/error/error.component';
 import { MatDatepickerModule} from "@angular/material/datepicker";
 import { MatInputModule} from "@angular/material/input";
 import { MatNativeDateModule} from "@angular/material/core";
-import {TransactionIbanComponent} from "./component/movimenti/transaction-iban/transaction-iban.component";
+import { TransactionIbanComponent} from "./component/movimenti/transaction-iban/transaction-iban.component";
 import { ReportComponent } from './component/report/report.component';
-import {MatSelectModule} from "@angular/material/select";
+import { MatSelectModule} from "@angular/material/select";
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { ModalKpiComponent } from './component/modal-kpi/modal-kpi.component';
-import { MessageComponent } from './component/message/message.component';
+import { ModalKpiSaveComponent } from './component/modal-kpi-save/modal-kpi-save.component';
+import { ModalMessageComponent } from './component/modal-message/modal-message.component';
+import { ModalAddTopicComponent } from './component/modal-add-topic/modal-add-topic.component';
+import { ServiceBankComponent } from './component/service-bank/service-bank.component';
+import { MatCardModule} from "@angular/material/card";
+import { CheckoutComponent } from './component/checkout/checkout.component';
+import { ProfileComponent } from './component/profile/profile.component';
 
 
 @NgModule({
@@ -38,23 +43,28 @@ import { MessageComponent } from './component/message/message.component';
     TransactionCardComponent,
     ErrorComponent,
     ReportComponent,
-    ModalKpiComponent,
-    MessageComponent,
+    ModalKpiSaveComponent,
+    ModalMessageComponent,
+    ModalAddTopicComponent,
+    ServiceBankComponent,
+    CheckoutComponent,
+    ProfileComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatNativeDateModule,
-    MatSelectModule,
-    NgxDatatableModule,
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        NgxDatatableModule,
+        MatCardModule,
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,

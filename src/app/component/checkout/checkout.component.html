@@ -1,0 +1,34 @@
+<div class="table-container">
+  <div class="title-container">
+    <h2>Checkout</h2>
+  </div>
+  <div class="two-table-container">
+    <table class="first-table">
+      <tr>
+        <th>Product Name</th>
+        <th>Amount</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let item of listProduct; let i = index">
+        <td>{{item.serviceBank.serviceName}}</td>
+        <td>€ {{item.serviceBank.monthlyFee}}</td>
+        <td class="trash-button" (click)="deleteOrders(item.id)"><i class="fa-solid fa-trash"></i></td>
+      </tr>
+    </table>
+
+    <table class="total-table">
+      <tr>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td>€ {{total}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="button-container">
+    <button class="mat-button" (click)="purchaseServiceBank(listProduct)">Acquista ora</button>
+  </div>
+
+
+</div>

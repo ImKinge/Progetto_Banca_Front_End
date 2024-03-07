@@ -1,0 +1,55 @@
+.table-container {
+  width: 800px;
+  height: 400px;
+  padding: 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px
+}
+
+.first-table {
+  overflow-y: scroll;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.total-table {
+  width: 20%;
+}
+
+.two-table-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+th {
+  font-size: 22px;
+
+}
+
+td, th {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.trash-button {
+
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.mat-button {
+  border: none;
+  padding: 10px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+}

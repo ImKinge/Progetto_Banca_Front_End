@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalKpiComponent } from './modal-kpi.component';
+import { ServiceBankComponent } from './service-bank.component';
 
-describe('ModalKpiComponent', () => {
-  let component: ModalKpiComponent;
-  let fixture: ComponentFixture<ModalKpiComponent>;
+describe('ServiceBankComponent', () => {
+  let component: ServiceBankComponent;
+  let fixture: ComponentFixture<ServiceBankComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalKpiComponent ]
+      declarations: [ ServiceBankComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ModalKpiComponent);
+    fixture = TestBed.createComponent(ServiceBankComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

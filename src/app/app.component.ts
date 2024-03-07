@@ -34,10 +34,14 @@ export class AppComponent implements OnInit {
     }
   }
 
-  goToProfile(){
+  goToTable(){
     if (localStorage.getItem('token')) {
       this.router.navigate(["user-info"]);
     }
+  }
+
+  goToProfile() {
+    this.router.navigate(["profile"]);
   }
 
   goToLogin() {
@@ -45,7 +49,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(["login"]);
   }
 
-  openDialog() {
+  goToServiceBank() {
+    // if (localStorage.getItem('token')) {
+      this.router.navigate(["service-bank"]);
+    // }
   }
 }
 
